@@ -24,5 +24,5 @@ print(type(model_config))
 if model_config.max_sequence_length:
     print(model_config.max_sequence_length)
 
-mc = Dict(model_config)
+mc = dict(model_config)
 print(type(mc))
