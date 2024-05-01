@@ -17,9 +17,10 @@ from transformers import AutoProcessor, AutoModelForVision2Seq, AutoConfig
 model_id = "HuggingFaceM4/idefics-80b-instruct"
 model_config = AutoConfig.from_pretrained(model_id)
 print(model_config)
+print(type(model_config))
 
 if model_config.max_sequence_length:
     print(model_config.max_sequence_length)
 
-if not model_config.text_config:
+if not "text_config" in model_config.keys():
     print("No text config")
