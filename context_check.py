@@ -6,4 +6,5 @@ processor = AutoProcessor.from_pretrained(model_id, use_fast=False, device_map="
 model = AutoModelForVision2Seq.from_pretrained(model_id, device_map="auto", torch_dtype="auto")
 
 model_config = AutoConfig.from_pretrained(model_id)
-print(model_config.max_position_embeddings)
+print(model_config)
+print(model_config.n_positions)
