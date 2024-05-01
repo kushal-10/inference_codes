@@ -7,4 +7,4 @@ model = AutoModelForVision2Seq.from_pretrained(model_id, device_map="auto", torc
 
 model_config = AutoConfig.from_pretrained(model_id)
 print(model_config)
-print(model_config.n_positions)
+print(model_config.text_config.max_position_embeddings)
