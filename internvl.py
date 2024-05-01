@@ -1,7 +1,4 @@
-import json
-import os
 from transformers import AutoTokenizer, AutoModel
-from tqdm import tqdm
 import torch
 import torchvision.transforms as T
 from PIL import Image
@@ -86,71 +83,23 @@ def load_image(image_file, input_size=448, max_num=6):
     pixel_values = [transform(image) for image in images]
     pixel_values = torch.stack(pixel_values)
     return pixel_values
-#flash_attn, peft
+
 
 path = "OpenGVLab/InternVL-Chat-V1-5"
-# If you have an 80G A100 GPU, you can put the entire model on a single GPU.
-model = AutoModel.from_pretrained(
-    path,
-    torch_dtype=torch.bfloat16,
-    low_cpu_mem_usage=True,
-    trust_remote_code=True).eval().cuda()
-# Otherwise, you need to set device_map='auto' to use multiple GPUs for inference.
+# # If you have an 80G A100 GPU, you can put the entire model on a single GPU.
 # model = AutoModel.from_pretrained(
 #     path,
 #     torch_dtype=torch.bfloat16,
 #     low_cpu_mem_usage=True,
-#     trust_remote_code=True,
-#     device_map='auto').eval()
+#     trust_remote_code=True).eval().cuda()
+# Otherwise, you need to set device_map='auto' to use multiple GPUs for inference.
+import os
+# os.environ["CUDA_LAUNCH_BLOCKING"] = "1"
+model = AutoModel.from_pretrained(
+    path,
+    torch_dtype=torch.bfloat16,
+    low_cpu_mem_usage=True,
+    trust_remote_code=True,
+    device_map='auto').eval()
 
 tokenizer = AutoTokenizer.from_pretrained(path, trust_remote_code=True)
-# set the max number of tiles in `max_num`
-pixel_values = load_image('./examples/image1.jpg', max_num=6).to(torch.bfloat16).cuda()
-
-generation_config = dict(
-    num_beams=1,
-    max_new_tokens=512,
-    do_sample=False,
-)
-
-# single-round single-image conversation
-question = "请详细描述图片"
-response = model.chat(tokenizer, pixel_values, question, generation_config)
-print(question, response)
-
-# # multi-round single-image conversation
-# question = "请详细描述图片"
-# response, history = model.chat(tokenizer, pixel_values, question, generation_config, history=None, return_history=True)
-# print(question, response)
-
-# question = "请根据图片写一首诗"
-# response, history = model.chat(tokenizer, pixel_values, question, generation_config, history=history, return_history=True)
-# print(question, response)
-
-# # multi-round multi-image conversation
-# pixel_values1 = load_image('./examples/image1.jpg', max_num=6).to(torch.bfloat16).cuda()
-# pixel_values2 = load_image('./examples/image2.jpg', max_num=6).to(torch.bfloat16).cuda()
-# pixel_values = torch.cat((pixel_values1, pixel_values2), dim=0)
-
-# question = "详细描述这两张图片"
-# response, history = model.chat(tokenizer, pixel_values, question, generation_config, history=None, return_history=True)
-# print(question, response)
-# # 第一张图片是一只红熊猫，它有着独特的橙红色皮毛，脸部、耳朵和四肢的末端有白色斑块。红熊猫的眼睛周围有深色的环，它的耳朵是圆形的，上面有白色的毛。它正坐在一个木制的结构上，看起来像是一个平台或休息的地方。背景中有树木和竹子，这表明红熊猫可能在一个模拟自然环境的动物园或保护区内。
-# #
-# # 第二张图片是一只大熊猫，它是中国的国宝，以其黑白相间的皮毛而闻名。大熊猫的眼睛、耳朵和四肢的末端是黑色的，而它的脸部、耳朵内侧和身体其他部分是白色的。大熊猫正坐在地上，周围有竹子，这是它们的主要食物来源。背景中也有树木，这表明大熊猫可能在一个为它们提供自然栖息地模拟的动物园或保护区内。
-
-# question = "这两张图片的相同点和区别分别是什么"
-# response, history = model.chat(tokenizer, pixel_values, question, generation_config, history=history, return_history=True)
-# print(question, response)
-# # 这两张图片的相同点：
-# # 
-# # 1. 都展示了熊猫，这是两种不同的熊猫物种。
-# # 2. 熊猫都处于一个看起来像是模拟自然环境的场所，可能是动物园或保护区。
-# # 3. 熊猫周围都有竹子，这是它们的主要食物来源。
-# # 
-# # 这两张图片的区别：
-# # 
-# # 1. 熊猫的种类不同：第一张图片是一只红熊猫，第二张图片是一只大熊猫。
-# # 2. 熊猫的皮毛颜色和图案不同：红熊猫的皮毛是橙红色，脸部、耳朵和四肢的末端有白色斑块；而大熊猫的皮毛是黑白相间的，眼睛、耳朵和四肢的末端是黑色的，脸部、耳朵内侧和身体其他部分是白色的。
-# # 3. 熊猫的姿态和位置不同：红熊猫坐在一个木制的结构上，而大熊猫坐在地上。
-# # 4. 背景中的植被和环境细节略有不同，但都包含树木和竹子。
