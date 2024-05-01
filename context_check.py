@@ -1,4 +1,5 @@
 from transformers import AutoProcessor, AutoModelForVision2Seq, AutoConfig
+from typing import Dict
 
 # model_ids = [
 #     "llava-hf/llava-1.5-7b-hf",
@@ -19,8 +20,9 @@ model_config = AutoConfig.from_pretrained(model_id)
 print(model_config)
 print(type(model_config))
 
+
 if model_config.max_sequence_length:
     print(model_config.max_sequence_length)
 
-if not "text_config" in model_config.keys():
-    print("No text config")
+mc = Dict(model_config)
+print(type(mc))
