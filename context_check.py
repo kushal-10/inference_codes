@@ -15,5 +15,5 @@ from transformers import AutoProcessor, AutoModelForVision2Seq, AutoConfig
 #     print(f"Max embeddings for {model}: {model_config.text_config.max_position_embeddings}")
 
 model_id = "HuggingFaceM4/idefics-80b-instruct"
-model_config = AutoConfig.from_pretrained(model)
+model_config = AutoConfig.from_pretrained(model_id)
 print(model_config)
