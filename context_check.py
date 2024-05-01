@@ -23,6 +23,8 @@ print(type(model_config))
 
 if model_config.max_sequence_length:
     print(model_config.max_sequence_length)
-
-if not "text_config" in model_config:
-    print("No text config")
+    
+if hasattr(model_config, "text_config"):
+    print("text_config is present.")
+else:
+    print("text_config is not present.")
