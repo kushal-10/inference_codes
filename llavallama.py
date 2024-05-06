@@ -11,7 +11,7 @@ image2 = Image.open(requests.get("http://images.cocodataset.org/val2017/00000003
 model_id = "llava-hf/llava-1.5-7b-hf"
 model_id = 'xtuner/llava-llama-3-8b-v1_1-transformers'
 
-processor = AutoProcessor.from_pretrained(model_id, use_fast=False, device_map="auto", verbose=False)
+processor = AutoProcessor.from_pretrained(model_id, device_map="auto", verbose=False)
 model = AutoModelForVision2Seq.from_pretrained(model_id, device_map="auto", torch_dtype="auto")
 
 
