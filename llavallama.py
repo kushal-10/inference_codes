@@ -1,4 +1,6 @@
 from transformers import AutoModelForCausalLM, AutoModelForVision2Seq, AutoProcessor
+import requests
+from PIL import Image
 
 model = AutoModelForVision2Seq.from_pretrained('xtuner/llava-llama-3-8b-v1_1-transformers')
 processor = AutoProcessor.from_pretrained('xtuner/llava-llama-3-8b-v1_1-transformers')
