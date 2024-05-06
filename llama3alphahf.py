@@ -20,7 +20,7 @@ image2 = Image.open(requests.get("http://images.cocodataset.org/val2017/00000003
 
 print(
     tokenizer.decode(
-        model.answer_question([image1, image2], "Compare these two images?", tokenizer),
+        model.answer_question(image1, image2, "Compare these two images?", tokenizer),
         skip_special_tokens=True,
     )
 )
