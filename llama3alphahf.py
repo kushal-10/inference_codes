@@ -1,6 +1,8 @@
 import torch
 from PIL import Image
 from transformers import AutoModelForCausalLM, AutoTokenizer
+import requests
+
 
 model_id = "qresearch/llama-3-vision-alpha-hf"
 model = AutoModelForCausalLM.from_pretrained(
