@@ -12,11 +12,13 @@ tokenizer = AutoTokenizer.from_pretrained(
     use_fast=True,
 )
 
-image = Image.open("image_path")
+image1 = Image.open(requests.get("https://llava-vl.github.io/static/images/view.jpg", stream=True).raw)
+image2 = Image.open(requests.get("http://images.cocodataset.org/val2017/000000039769.jpg", stream=True).raw)
+
 
 print(
     tokenizer.decode(
-        model.answer_question(image, "question", tokenizer),
+        model.answer_question(image1, "What is shown in the image?", tokenizer),
         skip_special_tokens=True,
     )
 )
