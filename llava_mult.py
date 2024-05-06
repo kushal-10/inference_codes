@@ -17,7 +17,7 @@ processor = AutoProcessor.from_pretrained(model_id, use_fast=False, device_map="
 model = AutoModelForVision2Seq.from_pretrained(model_id, device_map="auto", torch_dtype="auto")
 
 prompts = "USER: <image> <image>\nWhat is the difference between these images?\nASSISTANT:"
-inputs = processor(prompts, images=[image1], return_tensors="pt").to("cuda")
+inputs = processor(prompts, images=[image1, image2], return_tensors="pt").to("cuda")
 
 output = model.generate(**inputs, max_new_tokens=200)
 generated_text = processor.batch_decode(output, skip_special_tokens=True)
