@@ -7,6 +7,23 @@ image1 = Image.open(requests.get("https://llava-vl.github.io/static/images/view.
 image2 = Image.open(requests.get("http://images.cocodataset.org/val2017/000000039769.jpg", stream=True).raw)
 
 
+'''
+Test LLAVA 1.5
+'''
+print("TEST LLAVA 1.5")
+model_id = "llava-hf/llava-1.5-13b-hf"
+# model_id = "llava-hf/llava-1.5-7b-hf"
+
+processor = AutoProcessor.from_pretrained(model_id, use_fast=False, device_map="auto", verbose=False)
+model = AutoModelForVision2Seq.from_pretrained(model_id, device_map="auto", torch_dtype="auto")
+
+prompts = "USER: <image>\n<image>\nDescribe these two images in extreme detail\nASSISTANT:"
+inputs = processor(prompts, images=[image2, image1], return_tensors="pt").to("cuda")
+
+output = model.generate(**inputs, max_new_tokens=512)
+generated_text = processor.batch_decode(output, skip_special_tokens=True)
+print(generated_text)
+
 
 '''
 TEST LLAVA 1.6
@@ -65,7 +82,7 @@ model_id = "llava-hf/llava-v1.6-34b-hf"
 
 processor = AutoProcessor.from_pretrained(model_id, use_fast=False, device_map="auto", verbose=False)
 model = AutoModelForVision2Seq.from_pretrained(model_id, device_map="auto", torch_dtype="auto")
-prompts = "<|im_start|>system\nAnswer the questions.<|im_end|><|im_start|>user\n<image>\n<image>\nDescribe what is shown in these two images in detail<|im_end|><|im_start|>assistant\n"
+prompts = "<|im_start|>user<image><image>\nDescribe what is shown in these two images in detail<|im_end|><|im_start|>assistant\n"
 
 
 inputs = processor(prompts, images=image_padded, return_tensors="pt").to("cuda")
@@ -73,20 +90,3 @@ output = model.generate(**inputs, max_new_tokens=512)
 generated_text = processor.batch_decode(output, skip_special_tokens=True)
 print(generated_text)
 
-
-'''
-Test LLAVA 1.5
-'''
-print("TEST LLAVA 1.5")
-model_id = "llava-hf/llava-1.5-13b-hf"
-# model_id = "llava-hf/llava-1.5-7b-hf"
-
-processor = AutoProcessor.from_pretrained(model_id, use_fast=False, device_map="auto", verbose=False)
-model = AutoModelForVision2Seq.from_pretrained(model_id, device_map="auto", torch_dtype="auto")
-
-prompts = "USER: <image>\n<image>\nDescribe these two images in extreme detail\nASSISTANT:"
-inputs = processor(prompts, images=[image2, image1], return_tensors="pt").to("cuda")
-
-output = model.generate(**inputs, max_new_tokens=512)
-generated_text = processor.batch_decode(output, skip_special_tokens=True)
-print(generated_text)
