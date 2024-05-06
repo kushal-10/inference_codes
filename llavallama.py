@@ -15,34 +15,32 @@ processor = AutoProcessor.from_pretrained(model_id, device_map="auto", verbose=F
 model = AutoModelForVision2Seq.from_pretrained(model_id, device_map="auto", torch_dtype="auto")
 
 # Chat Template:
-'''
-"<|start_header_id|>user<|end_header_id|>\n\n<image>\nWhat are these?<|eot_id|>
- <|start_header_id|>assistant<|end_header_id|>\n\n"
-'''
-mess = [
-    {'role': 'system', 'content': 'This is a system message'},
-    {'role': 'user', 'content': 'What is shown in the image?', 'image': 'https://llava-vl.github.io/static/images/view.jpg'},
-    # {'role': 'assistant', 'content': ' A lake, A deck and A forest.'},
-    # {'role': 'user', 'content': 'Explain a bit more about this image'},
-    # {'role': 'assistant', 'content': 'The image features a serene scene of a lake with a pier extending out into the water. The pier is made of wood and appears to be a popular spot for relaxation and enjoying the view. The lake is surrounded by a forest, adding to the natural beauty of the area. The overall atmosphere of the image is peaceful and inviting.'},
-    # {'role': 'user', 'content': 'What is shown in this image?', 'image': 'http://images.cocodataset.org/val2017/000000039769.jpg'}
-]
+multiple_image_single_turn = '''<|start_header_id|>user<|end_header_id|>\n\n<image><image>\nCompare these two images?<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n'''
 
+# mess = [
+#     {'role': 'system', 'content': 'This is a system message'},
+#     {'role': 'user', 'content': 'What is shown in the image?', 'image': 'https://llava-vl.github.io/static/images/view.jpg'},
+#     # {'role': 'assistant', 'content': ' A lake, A deck and A forest.'},
+#     # {'role': 'user', 'content': 'Explain a bit more about this image'},
+#     # {'role': 'assistant', 'content': 'The image features a serene scene of a lake with a pier extending out into the water. The pier is made of wood and appears to be a popular spot for relaxation and enjoying the view. The lake is surrounded by a forest, adding to the natural beauty of the area. The overall atmosphere of the image is peaceful and inviting.'},
+#     # {'role': 'user', 'content': 'What is shown in this image?', 'image': 'http://images.cocodataset.org/val2017/000000039769.jpg'}
+# ]
 
-jinja_template = '''{%- for message in messages -%}{% if message['role'] == 'user' %}{% if message['image'] %}<|start_header_id|>user<|end_header_id|>\n\n<image>\n{{message['content']}}<|eot_id|>{% else %}<|start_header_id|>user<|end_header_id|>\n\n{{message['content']}}<|eot_id|>{% endif %}{% elif message['role'] == 'assistant' %}<|start_header_id|>assistant<|end_header_id|>\n\n{{message['content']}}<|eot_id|>{% endif %}{% endfor %}<|start_header_id|>assistant<|end_header_id|>\n\n'''
+# jinja_template = '''{%- for message in messages -%}{% if message['role'] == 'user' %}{% if message['image'] %}<|start_header_id|>user<|end_header_id|>\n\n<image>\n{{message['content']}}<|eot_id|>{% else %}<|start_header_id|>user<|end_header_id|>\n\n{{message['content']}}<|eot_id|>{% endif %}{% elif message['role'] == 'assistant' %}<|start_header_id|>assistant<|end_header_id|>\n\n{{message['content']}}<|eot_id|>{% endif %}{% endfor %}<|start_header_id|>assistant<|end_header_id|>\n\n'''
 
-temp = Template(jinja_template)
-prompts = temp.render(messages=mess)
-print(prompts)
+# temp = Template(jinja_template)
+# prompts = temp.render(messages=mess)
+# print(prompts)
 
 # Passes all cases (with/without/ref images ....)
 
-inputs = processor(prompts, images=[image1], return_tensors="pt").to("cuda")
+# inputs = processor(prompts, images=[image1], return_tensors="pt").to("cuda")
+inputs = processor(multiple_image_single_turn, images=[image1, image2], return_tensors="pt").to("cuda")
 
 output = model.generate(**inputs, max_new_tokens=200)
 generated_text = processor.batch_decode(output, skip_special_tokens=True)
 print(generated_text)
 
-text = generated_text[0]
-text_splits = text.split('assistant\n')
-print(text_splits)
+# text = generated_text[0]
+# text_splits = text.split('assistant\n')
+# print(text_splits)
