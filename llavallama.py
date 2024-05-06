@@ -42,3 +42,7 @@ inputs = processor(prompts, images=[image1], return_tensors="pt").to("cuda")
 output = model.generate(**inputs, max_new_tokens=200)
 generated_text = processor.batch_decode(output, skip_special_tokens=True)
 print(generated_text)
+
+text = generated_text[0]
+text_splits = text.split('assistant\n')
+print(text_splits)
