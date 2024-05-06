@@ -29,7 +29,7 @@ mess = [
 ]
 
 
-jinja_template_backup = '''{%- for message in messages -%}{% if message['role'] == 'user' %}{% if message['image'] %}<|start_header_id|>user<|end_header_id|>\n\n<image>\n{{message['content']}}<|eot_id|>{% else %}<|start_header_id|>user<|end_header_id|>\n\n{{message['content']}}<|eot_id|>{% endif %}{% elif message['role'] == 'assistant' %}<|start_header_id|>assistant<|end_header_id|>\n\n{{message['content']}}<|eot_id|>{% endif %}{% endfor %}<|start_header_id|>assistant<|end_header_id|>\n\n'''
+jinja_template = '''{%- for message in messages -%}{% if message['role'] == 'user' %}{% if message['image'] %}<|start_header_id|>user<|end_header_id|>\n\n<image>\n{{message['content']}}<|eot_id|>{% else %}<|start_header_id|>user<|end_header_id|>\n\n{{message['content']}}<|eot_id|>{% endif %}{% elif message['role'] == 'assistant' %}<|start_header_id|>assistant<|end_header_id|>\n\n{{message['content']}}<|eot_id|>{% endif %}{% endfor %}<|start_header_id|>assistant<|end_header_id|>\n\n'''
 
 temp = Template(jinja_template)
 promptu = temp.render(messages=mess)
