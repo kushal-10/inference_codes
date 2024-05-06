@@ -19,7 +19,7 @@ model = AutoModelForVision2Seq.from_pretrained(model_id, device_map="auto", torc
 prompts = "USER: <image>\n<image>\nDescribe these two images in extreme detail\nASSISTANT:"
 inputs = processor(prompts, images=[image1, image2], return_tensors="pt").to("cuda")
 
-output = model.generate(**inputs, max_new_tokens=200)
+output = model.generate(**inputs, max_new_tokens=512)
 generated_text = processor.batch_decode(output, skip_special_tokens=True)
 print(generated_text)
 
@@ -84,7 +84,7 @@ prompts = "<|im_start|>system\nAnswer the questions.<|im_end|><|im_start|>user\n
 
 
 inputs = processor(prompts, images=image_padded, return_tensors="pt").to("cuda")
-output = model.generate(**inputs, max_new_tokens=200)
+output = model.generate(**inputs, max_new_tokens=512)
 generated_text = processor.batch_decode(output, skip_special_tokens=True)
 print(generated_text)
 
