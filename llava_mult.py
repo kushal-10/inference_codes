@@ -16,7 +16,7 @@ model_id = "llava-hf/llava-1.5-13b-hf"
 processor = AutoProcessor.from_pretrained(model_id, use_fast=False, device_map="auto", verbose=False)
 model = AutoModelForVision2Seq.from_pretrained(model_id, device_map="auto", torch_dtype="auto")
 
-prompts = "USER: <image> <image>\nWhat is the difference between these images?\nASSISTANT:"
+prompts = "USER: <image>\n<image>\nDescribe these two images in extreme detail\nASSISTANT:"
 inputs = processor(prompts, images=[image1, image2], return_tensors="pt").to("cuda")
 
 output = model.generate(**inputs, max_new_tokens=200)
@@ -80,7 +80,7 @@ model_id = "llava-hf/llava-v1.6-34b-hf"
 
 processor = AutoProcessor.from_pretrained(model_id, use_fast=False, device_map="auto", verbose=False)
 model = AutoModelForVision2Seq.from_pretrained(model_id, device_map="auto", torch_dtype="auto")
-prompts = "<|im_start|>system\nAnswer the questions.<|im_end|><|im_start|>user\n<image>\n<image>\nWhat are the difference in the two images?<|im_end|><|im_start|>assistant\n"
+prompts = "<|im_start|>system\nAnswer the questions.<|im_end|><|im_start|>user\n<image>\n<image>\nDescribe what is shown in these two images in detail<|im_end|><|im_start|>assistant\n"
 
 
 inputs = processor(prompts, images=image_padded, return_tensors="pt").to("cuda")
