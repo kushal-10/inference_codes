@@ -24,6 +24,9 @@ output = model.generate(**inputs, max_new_tokens=512)
 generated_text = processor.batch_decode(output, skip_special_tokens=True)
 print(generated_text)
 
+'''
+['USER:  <image> \n <image> \nDescribe these two images in extreme detail\nASSISTANT: The image features a serene scene with a pier extending out into a large body of water. On the pier, two cats are lying down, enjoying the peaceful atmosphere. One cat is positioned closer to the left side of the pier, while the other is situated more towards the right side.\n\nIn the background, there is a mountain visible, adding to the picturesque setting. Additionally, there are two remote controls placed on the pier, possibly belonging to someone who was enjoying the view or spending time with the cats.']
+'''
 
 '''
 TEST LLAVA 1.6
@@ -76,16 +79,17 @@ image_padded = pad_images([image1, image2])
 
 # model_id = "llava-hf/llava-v1.6-mistral-7b-hf"
 # model_id = "llava-hf/llava-v1.6-vicuna-7b-hf"
-# model_id = "llava-hf/llava-v1.6-vicuna-13b-hf"
-model_id = "llava-hf/llava-v1.6-34b-hf"
+model_id = "llava-hf/llava-v1.6-vicuna-13b-hf"
+# model_id = "llava-hf/llava-v1.6-34b-hf"
 
 
 processor = AutoProcessor.from_pretrained(model_id, use_fast=False, device_map="auto", verbose=False)
 model = AutoModelForVision2Seq.from_pretrained(model_id, device_map="auto", torch_dtype="auto")
-prompts = "<|im_start|>user<image><image>\nDescribe what is shown in these two images in detail<|im_end|><|im_start|>assistant\n"
+# prompts34b = "<|im_start|>user<image><image>\nDescribe what is shown in these two images in detail<|im_end|><|im_start|>assistant\n"
+prompt_vicuna = "A chat between a curious human and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the human's questions. USER: <image> <image>\nDescribe these images and their differences? ASSISTANT:"
 
 
-inputs = processor(prompts, images=image_padded, return_tensors="pt").to("cuda")
+inputs = processor(prompt_vicuna, images=image_padded, return_tensors="pt").to("cuda")
 output = model.generate(**inputs, max_new_tokens=512)
 generated_text = processor.batch_decode(output, skip_special_tokens=True)
 print(generated_text)
