@@ -46,7 +46,7 @@ image1 = Image.open(requests.get("https://llava-vl.github.io/static/images/view.
 image2 = Image.open(requests.get("http://images.cocodataset.org/val2017/000000039769.jpg", stream=True).raw)
 image3 = Image.open(requests.get("https://farm7.staticflickr.com/6116/6263367172_2e52beb0b5_z.jpg", stream=True).raw)
 
-image_padded = pad_images([image3, image1, image2])
+image_padded = pad_images([image1, image3, image2])
 
 # model_id = "llava-hf/llava-v1.6-mistral-7b-hf"
 # model_id = "llava-hf/llava-v1.6-vicuna-7b-hf"
