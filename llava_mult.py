@@ -3,10 +3,6 @@ import requests
 from PIL import Image
 from jinja2 import Template
 
-image1 = Image.open(requests.get("https://llava-vl.github.io/static/images/view.jpg", stream=True).raw)
-image2 = Image.open(requests.get("http://images.cocodataset.org/val2017/000000039769.jpg", stream=True).raw)
-
-
 def load_image(image_path: str) -> Image:
     '''
     Load an image from a given link/directory
