@@ -3,14 +3,20 @@ from transformers import IdeficsForVisionText2Text, AutoProcessor
 
 from jinja2 import Template
 
-#Idefics 9b workss
+#Idefics 9b works
+
+prompt_large = '''
+<|im_start|>system\nAnswer the questions.<|im_end|>
+<|im_start|>user\nYou are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.<|im_end|><|im_start|>assistant\n'''
+
 
 # We feed to the model an arbitrary sequence of text strings and images. Images can be either URLs or PIL Images.
 prompts = [
     [
-        "User: Describe these two images and state their differences",
+        "User: You are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.The first image is a distractor, the second image is the target, and the third image is a distractor. Instruction: Describe the target image. Generate the referring expression starting with the tag 'Expression: ' for the given target image. Omit any other text",
         "https://upload.wikimedia.org/wikipedia/commons/8/86/Id%C3%A9fix.JPG",
         "https://static.wikia.nocookie.net/asterix/images/2/25/R22b.gif/revision/latest?cb=20110815073052",
+        "https://llava-vl.github.io/static/images/view.jpg",
         "<end_of_utterance>",
         "\nAssistant:",
     ],
