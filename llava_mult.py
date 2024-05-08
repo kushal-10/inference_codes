@@ -46,20 +46,18 @@ image1 = Image.open(requests.get("https://llava-vl.github.io/static/images/view.
 image2 = Image.open(requests.get("http://images.cocodataset.org/val2017/000000039769.jpg", stream=True).raw)
 image3 = Image.open(requests.get("https://farm7.staticflickr.com/6116/6263367172_2e52beb0b5_z.jpg", stream=True).raw)
 
-image_padded = pad_images([image1, image2, image3])
+image_padded = pad_images([image2, image1, image3])
 
 # model_id = "llava-hf/llava-v1.6-mistral-7b-hf"
 # model_id = "llava-hf/llava-v1.6-vicuna-7b-hf"
 # model_id = "llava-hf/llava-v1.6-vicuna-13b-hf"
 model_id = "llava-hf/llava-v1.6-34b-hf"
 
-
-
 processor = AutoProcessor.from_pretrained(model_id, use_fast=False, device_map="auto", verbose=False)
 model = AutoModelForVision2Seq.from_pretrained(model_id, device_map="auto", torch_dtype="auto")
 #large_chat_template = "<|im_start|>system\nAnswer the questions.<|im_end|>{%- for message in messages -%}{% if message['role'] == 'user' %}{% if message['image']%}<|im_start|>user\n<image>\n{{message['content']}}<|im_end|>{% else %}<|im_start|>\nuser\n{{message['content']}}<|im_end|>{% endif %}{% elif message['role'] == 'assistant' %}<|im_start|>assistant\n{{message['content']}}<|im_end|>{% endif %}{% endfor %}<|im_start|>assistant\n"
 
-prompt_large = '''<|im_start|>system\nAnswer the questions.<|im_end|><|im_start|>user\n<image>\n<image>\n<image>You are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.\nThe first image is a distractor, the second image is the target, and the third image is a distractor. Instruction: Describe the target image. Generate the referring expression starting with the tag "Expression: " for the given target image. Omit any other text<|im_end|><|im_start|>assistant\n'''
+prompt_large = '''<|im_start|>system\nAnswer the questions.<|im_end|><|im_start|>user\n<image><image><image>\nYou are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.\nThe first image is a distractor, the second image is the target, and the third image is a distractor. Instruction: Describe the target image. Generate the referring expression starting with the tag "Expression: " for the given target image. Omit any other text<|im_end|><|im_start|>assistant\n'''
 
 inputs = processor(prompt_large, images=image_padded, return_tensors="pt").to("cuda")
 output = model.generate(**inputs, max_new_tokens=512)
