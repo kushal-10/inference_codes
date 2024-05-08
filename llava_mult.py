@@ -41,6 +41,7 @@ def pad_images(images):
 
     return padded_images
 
+#Pier, Cats, Motorbikes
 
 image1 = Image.open(requests.get("https://llava-vl.github.io/static/images/view.jpg", stream=True).raw)
 image2 = Image.open(requests.get("http://images.cocodataset.org/val2017/000000039769.jpg", stream=True).raw)
