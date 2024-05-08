@@ -7,32 +7,6 @@ image1 = Image.open(requests.get("https://llava-vl.github.io/static/images/view.
 image2 = Image.open(requests.get("http://images.cocodataset.org/val2017/000000039769.jpg", stream=True).raw)
 
 
-'''
-Test LLAVA 1.5
-'''
-print("TEST LLAVA 1.5")
-model_id = "llava-hf/llava-1.5-13b-hf"
-# model_id = "llava-hf/llava-1.5-7b-hf"
-
-processor = AutoProcessor.from_pretrained(model_id, use_fast=False, device_map="auto", verbose=False)
-model = AutoModelForVision2Seq.from_pretrained(model_id, device_map="auto", torch_dtype="auto")
-
-prompts = "USER: <image>\n<image>\nDescribe these two images in extreme detail\nASSISTANT:"
-inputs = processor(prompts, images=[image2, image1], return_tensors="pt").to("cuda")
-
-output = model.generate(**inputs, max_new_tokens=512)
-generated_text = processor.batch_decode(output, skip_special_tokens=True)
-print(generated_text)
-
-'''
-['USER:  <image> \n <image> \nDescribe these two images in extreme detail\nASSISTANT: The image features a serene scene with a pier extending out into a large body of water. On the pier, two cats are lying down, enjoying the peaceful atmosphere. One cat is positioned closer to the left side of the pier, while the other is situated more towards the right side.\n\nIn the background, there is a mountain visible, adding to the picturesque setting. Additionally, there are two remote controls placed on the pier, possibly belonging to someone who was enjoying the view or spending time with the cats.']
-'''
-
-'''
-TEST LLAVA 1.6
-'''
-print("TEST LLAVA 1.6")
-
 def load_image(image_path: str) -> Image:
     '''
     Load an image from a given link/directory
@@ -74,22 +48,24 @@ def pad_images(images):
 
 image1 = Image.open(requests.get("https://llava-vl.github.io/static/images/view.jpg", stream=True).raw)
 image2 = Image.open(requests.get("http://images.cocodataset.org/val2017/000000039769.jpg", stream=True).raw)
+image3 = Image.open(requests.get("https://upload.wikimedia.org/wikipedia/commons/8/86/Id%C3%A9fix.JPG", stream=True).raw)
 
-image_padded = pad_images([image1, image2])
+image_padded = pad_images([image1, image2, image3])
 
 # model_id = "llava-hf/llava-v1.6-mistral-7b-hf"
 # model_id = "llava-hf/llava-v1.6-vicuna-7b-hf"
-model_id = "llava-hf/llava-v1.6-vicuna-13b-hf"
-# model_id = "llava-hf/llava-v1.6-34b-hf"
+# model_id = "llava-hf/llava-v1.6-vicuna-13b-hf"
+model_id = "llava-hf/llava-v1.6-34b-hf"
+
 
 
 processor = AutoProcessor.from_pretrained(model_id, use_fast=False, device_map="auto", verbose=False)
 model = AutoModelForVision2Seq.from_pretrained(model_id, device_map="auto", torch_dtype="auto")
-# prompts34b = "<|im_start|>user<image><image>\nDescribe what is shown in these two images in detail<|im_end|><|im_start|>assistant\n"
-prompt_vicuna = "A chat between a curious human and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the human's questions. USER: <image> <image>\nDescribe these images and their differences? ASSISTANT:"
+#large_chat_template = "<|im_start|>system\nAnswer the questions.<|im_end|>{%- for message in messages -%}{% if message['role'] == 'user' %}{% if message['image']%}<|im_start|>user\n<image>\n{{message['content']}}<|im_end|>{% else %}<|im_start|>\nuser\n{{message['content']}}<|im_end|>{% endif %}{% elif message['role'] == 'assistant' %}<|im_start|>assistant\n{{message['content']}}<|im_end|>{% endif %}{% endfor %}<|im_start|>assistant\n"
 
+prompt_large = '''<|im_start|>system\nAnswer the questions.<|im_end|><|im_start|>user\n<image>\n<image>\n<image>You are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.\nThe first image is a distractor, the second image is the target, and the third image is a distractor. Instruction: Describe the target image. Generate the referring expression starting with the tag "Expression: " for the given target image. Omit any other text<|im_end|><|im_start|>assistant\n'''
 
-inputs = processor(prompt_vicuna, images=image_padded, return_tensors="pt").to("cuda")
+inputs = processor(prompt_large, images=image_padded, return_tensors="pt").to("cuda")
 output = model.generate(**inputs, max_new_tokens=512)
 generated_text = processor.batch_decode(output, skip_special_tokens=True)
 print(generated_text)
