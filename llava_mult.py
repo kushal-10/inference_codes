@@ -44,7 +44,7 @@ def pad_images(images):
 
 image1 = Image.open(requests.get("https://llava-vl.github.io/static/images/view.jpg", stream=True).raw)
 image2 = Image.open(requests.get("http://images.cocodataset.org/val2017/000000039769.jpg", stream=True).raw)
-image3 = Image.open(requests.get("https://upload.wikimedia.org/wikipedia/commons/8/86/Id%C3%A9fix.JPG", stream=True).raw)
+image3 = Image.open(requests.get("https://farm7.staticflickr.com/6116/6263367172_2e52beb0b5_z.jpg", stream=True).raw)
 
 image_padded = pad_images([image1, image2, image3])
 
