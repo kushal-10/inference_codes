@@ -11,9 +11,9 @@ prompts = [
         "User: You are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images",
         "User: The first image is a distractor",
         "https://upload.wikimedia.org/wikipedia/commons/8/86/Id%C3%A9fix.JPG",
-        "User: The second image is the target",
+        "User: The second image is the distractor",
         "https://static.wikia.nocookie.net/asterix/images/2/25/R22b.gif/revision/latest?cb=20110815073052",
-        "User: The third image is a distractor"
+        "User: The third image is a target"
         "https://llava-vl.github.io/static/images/view.jpg",
         "User: Instruction: Describe the target image. Generate the referring expression starting with the tag 'Expression: ' for the given target image. Omit any other text",
         "<end_of_utterance>",
