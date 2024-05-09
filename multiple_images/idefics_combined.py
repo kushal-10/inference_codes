@@ -14,7 +14,7 @@ IMAGES -
 Combined image order - dog, man, lake
 '''
 
-image = Image.open('combined_image.jpg')
+image = Image.open('combined_image_with_lines.jpg')
 
 # Default Message
 prompt1 = [

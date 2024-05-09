@@ -1,4 +1,4 @@
-from PIL import Image
+from PIL import Image, ImageDraw
 import requests
 
 
@@ -12,14 +12,23 @@ image1 = image1.resize((int(image1.width * min_height / image1.height), min_heig
 image2 = image2.resize((int(image2.width * min_height / image2.height), min_height))
 image3 = image3.resize((int(image3.width * min_height / image3.height), min_height))
 
+
+# Calculate the width of the combined image
 combined_width = image1.width + image2.width + image3.width
+line_width = 10  # Width of the separator line
 
-# Create a new blank image 
-combined_image = Image.new("RGB", (combined_width, min_height))
+# Create a new blank image with the combined width and the maximum height of the three images
+combined_image = Image.new("RGB", (combined_width, min_height), color='white')
 
-# Paste each image
+# Paste each image into the combined image
 combined_image.paste(image1, (0, 0))
 combined_image.paste(image2, (image1.width, 0))
 combined_image.paste(image3, (image1.width + image2.width, 0))
 
-combined_image.save("combined_image.jpg")
+# Add separator lines between images
+draw = ImageDraw.Draw(combined_image)
+draw.rectangle([image1.width - line_width, 0, image1.width + line_width, min_height], fill='black')
+draw.rectangle([image1.width + image2.width - line_width, 0, image1.width + image2.width + line_width, min_height], fill='black')
+
+# Save the combined image
+combined_image.save("combined_image_with_lines.jpg")
