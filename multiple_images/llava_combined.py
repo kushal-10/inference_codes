@@ -88,4 +88,15 @@ generate_output(prompt3)
 '''
 
 Results:
+
+##################### Expected output - Running dog
+['<|im_start|> system\nAnswer the questions. <|im_start|> user\n\nYou are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.\nThe first image is the target, \nthe second image is a distractor, and \nthe third image is a distractor. Instruction: Describe the target image. Generate the referring expression starting with the tag "Expression: " for the given target image. Omit any other text <|im_start|> assistant\n
+Expression: The image on the left is the target.']
+##################### Expected output - Man
+['<|im_start|> system\nAnswer the questions. <|im_start|> user\n\nYou are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.\nThe first image is a distractor, \nthe second image is the target, and \nthe third image is a distractor. Instruction: Describe the target image. Generate the referring expression starting with the tag "Expression: " for the given target image. Omit any other text <|im_start|> assistant\n
+Expression: The image in the middle is the target. It features a cartoon character dressed in a red cape and a yellow outfit, standing confidently with one hand on their hip and the other resting on a sword. The character has a beard and is wearing a helmet with a crest on it.']
+##################### Expected output - Lake view
+['<|im_start|> system\nAnswer the questions. <|im_start|> user\n\nYou are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.\nThe first image is a distractor, \nthe second image is a distractor, and \nthe third image is the target. Instruction: Describe the target image. Generate the referring expression starting with the tag "Expression: " for the given target image. Omit any other text <|im_start|> assistant\n
+Expression: The image in the middle is the target. It features a cartoon character dressed in a red cape and a yellow outfit, standing confidently with one hand on their hip and the other resting on a sword. The character has a beard and is wearing a helmet with a crest on it.']
+
 '''
