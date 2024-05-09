@@ -1,7 +1,6 @@
-from transformers import AutoProcessor, AutoModelForVision2Seq, LlavaForConditionalGeneration
+from transformers import AutoProcessor, AutoModelForVision2Seq
 import requests
 from PIL import Image
-from jinja2 import Template
 
 def load_image(image_path: str) -> Image:
     '''
@@ -41,11 +40,22 @@ def pad_images(images):
 
     return padded_images
 
-#Pier, Cats, Motorbikes
+# #Pier, Cats, Motorbikes
+# image1 = Image.open(requests.get("https://llava-vl.github.io/static/images/view.jpg", stream=True).raw)
+# image2 = Image.open(requests.get("http://images.cocodataset.org/val2017/000000039769.jpg", stream=True).raw)
+# image3 = Image.open(requests.get("https://farm7.staticflickr.com/6116/6263367172_2e52beb0b5_z.jpg", stream=True).raw)
 
-image1 = Image.open(requests.get("https://llava-vl.github.io/static/images/view.jpg", stream=True).raw)
-image2 = Image.open(requests.get("http://images.cocodataset.org/val2017/000000039769.jpg", stream=True).raw)
-image3 = Image.open(requests.get("https://farm7.staticflickr.com/6116/6263367172_2e52beb0b5_z.jpg", stream=True).raw)
+'''
+USE IMAGES FROM IDEFICS TEST
+"https://upload.wikimedia.org/wikipedia/commons/8/86/Id%C3%A9fix.JPG" -> Idefics - Running Dog
+"https://static.wikia.nocookie.net/asterix/images/2/25/R22b.gif/revision/latest?cb=20110815073052" -> Asterix - Man with red cape
+"https://llava-vl.github.io/static/images/view.jpg" -> View of a lake surrounded by forest
+'''
+
+image1 = Image.open(requests.get("https://upload.wikimedia.org/wikipedia/commons/8/86/Id%C3%A9fix.JPG", stream=True).raw)
+image2 = Image.open(requests.get("https://static.wikia.nocookie.net/asterix/images/2/25/R22b.gif/revision/latest?cb=20110815073052", stream=True).raw)
+image3 = Image.open(requests.get("https://llava-vl.github.io/static/images/view.jpg", stream=True).raw)
+
 
 image_padded = pad_images([image1, image3, image2])
 
@@ -56,14 +66,39 @@ model_id = "llava-hf/llava-v1.6-34b-hf"
 
 processor = AutoProcessor.from_pretrained(model_id, use_fast=False, device_map="auto", verbose=False)
 model = AutoModelForVision2Seq.from_pretrained(model_id, device_map="auto", torch_dtype="auto")
+
 #large_chat_template = "<|im_start|>system\nAnswer the questions.<|im_end|>{%- for message in messages -%}{% if message['role'] == 'user' %}{% if message['image']%}<|im_start|>user\n<image>\n{{message['content']}}<|im_end|>{% else %}<|im_start|>\nuser\n{{message['content']}}<|im_end|>{% endif %}{% elif message['role'] == 'assistant' %}<|im_start|>assistant\n{{message['content']}}<|im_end|>{% endif %}{% endfor %}<|im_start|>assistant\n"
-
 # Updated prompt based on - https://github.com/haotian-liu/LLaVA/pull/432
+# prompt_large = '''<|im_start|>system\nAnswer the questions.<|im_end|><|im_start|>user\nYou are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.\n<image>\nThe first image is a distractor, <image>\nthe second image is the target, and <image>\nthe third image is a distractor. Instruction: Describe the target image. Generate the referring expression starting with the tag "Expression: " for the given target image. Omit any other text<|im_end|><|im_start|>assistant\n'''
 
-prompt_large = '''<|im_start|>system\nAnswer the questions.<|im_end|><|im_start|>user\nYou are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.\n<image>\nThe first image is a distractor, <image>\nthe second image is the target, and <image>\nthe third image is a distractor. Instruction: Describe the target image. Generate the referring expression starting with the tag "Expression: " for the given target image. Omit any other text<|im_end|><|im_start|>assistant\n'''
+# Default Prompts
+prompt1 = '''<|im_start|>system\nAnswer the questions.<|im_end|><|im_start|>user\n<image><image><image>\nYou are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.\nThe first image is the target, \nthe second image is a distractor, and \nthe third image is a distractor. Instruction: Describe the target image. Generate the referring expression starting with the tag "Expression: " for the given target image. Omit any other text<|im_end|><|im_start|>assistant\n'''
+prompt2 = '''<|im_start|>system\nAnswer the questions.<|im_end|><|im_start|>user\n<image><image><image>\nYou are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.\nThe first image is a distractor, \nthe second image is the target, and \nthe third image is a distractor. Instruction: Describe the target image. Generate the referring expression starting with the tag "Expression: " for the given target image. Omit any other text<|im_end|><|im_start|>assistant\n'''
+prompt3 = '''<|im_start|>system\nAnswer the questions.<|im_end|><|im_start|>user\n<image><image><image>\nYou are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.\nThe first image is a distractor, \nthe second image is a distractor, and \nthe third image is the target. Instruction: Describe the target image. Generate the referring expression starting with the tag "Expression: " for the given target image. Omit any other text<|im_end|><|im_start|>assistant\n'''
 
-inputs = processor(prompt_large, images=image_padded, return_tensors="pt").to("cuda")
-output = model.generate(**inputs, max_new_tokens=512)
-generated_text = processor.batch_decode(output, skip_special_tokens=True)
-print(generated_text)
+# Change location of image tags after each image is referred
+prompt4 = '''<|im_start|>system\nAnswer the questions.<|im_end|><|im_start|>user\nYou are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.\n<image>\nThe first image is the target, <image>\nthe second image is a distractor, and <image>\nthe third image is a distractor. Instruction: Describe the target image. Generate the referring expression starting with the tag "Expression: " for the given target image. Omit any other text<|im_end|><|im_start|>assistant\n'''
+prompt5 = '''<|im_start|>system\nAnswer the questions.<|im_end|><|im_start|>user\nYou are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.\n<image>\nThe first image is a distractor, <image>\nthe second image is the target, and <image>\nthe third image is a distractor. Instruction: Describe the target image. Generate the referring expression starting with the tag "Expression: " for the given target image. Omit any other text<|im_end|><|im_start|>assistant\n'''
+prompt6 = '''<|im_start|>system\nAnswer the questions.<|im_end|><|im_start|>user\nYou are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.\n<image>\nThe first image is a distractor, <image>\nthe second image is a distractor, and <image>\nthe third image is the target. Instruction: Describe the target image. Generate the referring expression starting with the tag "Expression: " for the given target image. Omit any other text<|im_end|><|im_start|>assistant\n'''
+
+
+def generate_output(prompt):
+    inputs = processor(prompt, images=image_padded, return_tensors="pt").to("cuda")
+    output = model.generate(**inputs, max_new_tokens=512)
+    generated_text = processor.batch_decode(output, skip_special_tokens=True)
+    print(generated_text)
+
+
+print("##################### Expected output - Running dog")
+generate_output(prompt1)
+print("##################### Expected output - Man")
+generate_output(prompt2)
+print("##################### Expected output - Lake view")
+generate_output(prompt3)
+print("##################### Expected output - Running dog")
+generate_output(prompt4)
+print("##################### Expected output - Man")
+generate_output(prompt5)
+print("##################### Expected output - Lake view")
+generate_output(prompt6)
 

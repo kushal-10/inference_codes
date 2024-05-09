@@ -88,5 +88,49 @@ generate_output(prompt3)
 print("##################### Expected output - Running Dog")
 generate_output(prompt4)
 
+'''
+
+Results:
+
+##################### Expected output - Man
+0:
+User: You are given three images, one is called target and the other two are distractors.
+Your task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.
+ 
+The first image is a distractor,  
+the second image is the target, and  
+the third image is a distractor. Instruction: Describe the target image. Generate the referring expression starting with the tag 'Expression: ' for the given target image. Omit any other text 
+Assistant: Expression: The target image shows a man in a cape walking on a wooden bridge.
+
+##################### Expected output - Man
+0:
+User: You are given three images merged horizontally into one image, one is called target and the other two are distractors.
+Your task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.
+ 
+The image on the left is a distractor,  
+the image in the center is the target, and  
+the image on the right is a distractor. Instruction: Describe the target image. Generate the referring expression starting with the tag 'Expression: ' for the given target image. Omit any other text 
+Assistant: Expression: The target image shows a man in a cape walking on a wooden bridge.
+
+##################### Expected output - Lake view
+0:
+User: You are given three images merged horizontally into one image, one is called target and the other two are distractors.
+Your task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.
+ 
+The image on the left is a distractor,  
+the image in the center is a distractor, and  
+the image on the right is the target. Instruction: Describe the target image. Generate the referring expression starting with the tag 'Expression: ' for the given target image. Omit any other text 
+Assistant: Expression: The target image shows a man in a cape walking on a wooden bridge.
+
+##################### Expected output - Running Dog
+0:
+User: You are given three images merged horizontally into one image, one is called target and the other two are distractors.
+Your task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.
+ 
+The image on the left is the target,  
+the image in the center is a distractor, and  
+the image on the right is a distractor. Instruction: Describe the target image. Generate the referring expression starting with the tag 'Expression: ' for the given target image. Omit any other text 
+Assistant: Expression: The image on the left shows a man in a cape walking on a wooden bridge.
 
 
+'''
