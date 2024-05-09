@@ -105,24 +105,4 @@ generate_output(prompt6)
 '''
 
 Results:
-
-##################### Expected output - Running dog
-['<|im_start|> system\nAnswer the questions. <|im_start|> user\n\nYou are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.\nThe first image is the target, \nthe second image is a distractor, and \nthe third image is a distractor. Instruction: Describe the target image. Generate the referring expression starting with the tag "Expression: " for the given target image. Omit any other text 
-<|im_start|> assistant\nExpression: The image shows a cartoon character, specifically a white rabbit, running with a cloud of dust behind it. The rabbit is depicted in a dynamic pose, suggesting motion. The background is a simple, solid color, which helps to focus attention on the rabbit.']
-##################### Expected output - Man
-['<|im_start|> system\nAnswer the questions. <|im_start|> user\n\nYou are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.\nThe first image is a distractor, \nthe second image is the target, and \nthe third image is a distractor. Instruction: Describe the target image. Generate the referring expression starting with the tag "Expression: " for the given target image. Omit any other text 
-<|im_start|> assistant\nExpression: The image is a cartoon of a rabbit running with a cloud of dust behind it.']
-##################### Expected output - Lake view
-['<|im_start|> system\nAnswer the questions. <|im_start|> user\n\nYou are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.\nThe first image is a distractor, \nthe second image is a distractor, and \nthe third image is the target. Instruction: Describe the target image. Generate the referring expression starting with the tag "Expression: " for the given target image. Omit any other text 
-<|im_start|> assistant\nExpression: The image is a cartoon of a rabbit running with a cloud of dust behind it.']
-##################### Expected output - Running dog
-['<|im_start|> system\nAnswer the questions. <|im_start|> user\nYou are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.\n\nThe first image is the target, \nthe second image is a distractor, and \nthe third image is a distractor. Instruction: Describe the target image. Generate the referring expression starting with the tag "Expression: " for the given target image. Omit any other text 
-<|im_start|> assistant\nExpression: A cartoon rabbit running with a cloud of dust behind it.']
-##################### Expected output - Man
-['<|im_start|> system\nAnswer the questions. <|im_start|> user\nYou are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.\n\nThe first image is a distractor, \nthe second image is the target, and \nthe third image is a distractor. Instruction: Describe the target image. Generate the referring expression starting with the tag "Expression: " for the given target image. Omit any other text 
-<|im_start|> assistant\nExpression: A cartoon character in a red cape and yellow armor, standing with one hand on hip and the other extended forward.']
-##################### Expected output - Lake view
-['<|im_start|> system\nAnswer the questions. <|im_start|> user\nYou are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.\n\nThe first image is a distractor, \nthe second image is a distractor, and \nthe third image is the target. Instruction: Describe the target image. Generate the referring expression starting with the tag "Expression: " for the given target image. Omit any other text 
-<|im_start|> assistant\nExpression: A cartoon rabbit with a surprised expression, running with a cloud of dust behind it.']
-
 '''
