@@ -1,8 +1,10 @@
 from PIL import Image
+import requests
 
-image1 = Image.open("https://upload.wikimedia.org/wikipedia/commons/8/86/Id%C3%A9fix.JPG")
-image2 = Image.open("https://static.wikia.nocookie.net/asterix/images/2/25/R22b.gif/revision/latest?cb=20110815073052")
-image3 = Image.open("https://llava-vl.github.io/static/images/view.jpg")
+
+image3 = Image.open(requests.get("https://upload.wikimedia.org/wikipedia/commons/8/86/Id%C3%A9fix.JPG", stream=True).raw)
+image3 = Image.open(requests.get("https://static.wikia.nocookie.net/asterix/images/2/25/R22b.gif/revision/latest?cb=20110815073052", stream=True).raw)
+image3 = Image.open(requests.get("https://llava-vl.github.io/static/images/view.jpg", stream=True).raw)
 
 # Resize images to have the same height
 min_height = min(image1.height, image2.height, image3.height)
