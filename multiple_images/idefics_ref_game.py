@@ -1,12 +1,13 @@
 import torch
 from transformers import IdeficsForVisionText2Text, AutoProcessor
+from PIL import Image
 
-from jinja2 import Template
+image = Image.open("images/3.png")
 
 prompt1 = [
     [
         "User: What can you see in this image?",
-        "images/3.png",
+        image,
         "<end_of_utterance>",
         "\nAssistant:",
     ],
@@ -36,3 +37,18 @@ def generate_output(prompt):
 
 print("##################### Expected output - First row is empty other rows are filled with Xs")
 generate_output(prompt1)
+
+'''
+RESULT1
+User: You are given three images, one is called target and the other two are distractors.
+Your task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor imagesUser: The first image is the targetimages/3.pngUser: The second image is a distractorimages/8.pngUser: The third image is a distractorimages/13.pngUser: Instruction: Describe the target image. Generate the referring expression starting with the tag 'Expression: ' for the given target image. Omit any other text 
+Assistant: Expression: The target image shows a man wearing a red shirt and black pants, holding a tennis racket in his hand.
+
+RESULT2
+0:
+User: What can you see in this image?images/3.png 
+Assistant: I'm sorry, but the image is not available for me to see. Please provide more information or context about the image.
+
+Maybe it only accepts an online path, and never a local path
+It also accepts PIL.Image object, try that.
+'''
