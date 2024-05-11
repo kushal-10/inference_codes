@@ -62,4 +62,13 @@ User: What can you see in this image?
 Assistant: The image is a black and white grid with 25 squares, arranged in a 5x5 pattern. Each square is either filled with a black or white color.
 
 Try multimodal refernce game instance
+X|
+User: 
+You are given three images, one is called target and the other two are distractors.
+Your task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.
+The first image is the target, 
+the second image is a distractor, and 
+the third image is a distractor. Instruction: Describe the target image. Generate the referring expression starting with the tag "Expression: " for the given target image. Omit any other text 
+Assistant: Expression: The target image is a grid with 25 squares, 5 rows and 5 columns.
+
 '''
