@@ -2,12 +2,16 @@ import torch
 from transformers import IdeficsForVisionText2Text, AutoProcessor
 from PIL import Image
 
-image = Image.open("images/3.png")
+image3 = Image.open("images/3.png")
+image8 = Image.open("images/8.png")
+image13 = Image.open("images/13.png")
 
 prompt1 = [
     [
-        "User: What can you see in this image?",
-        image,
+        'User: \nYou are given three images, one is called target and the other two are distractors.\nYour task is to generate a referring expression that best describes the target image while distinguishing it from the two other distractor images.\nThe first image is the target, \nthe second image is a distractor, and \nthe third image is a distractor. Instruction: Describe the target image. Generate the referring expression starting with the tag "Expression: " for the given target image. Omit any other text',
+        image3,
+        image8,
+        image13,
         "<end_of_utterance>",
         "\nAssistant:",
     ],
@@ -51,4 +55,11 @@ Assistant: I'm sorry, but the image is not available for me to see. Please provi
 
 Maybe it only accepts an online path, and never a local path
 It also accepts PIL.Image object, try that.
+
+Passing as an object worked
+0:
+User: What can you see in this image? 
+Assistant: The image is a black and white grid with 25 squares, arranged in a 5x5 pattern. Each square is either filled with a black or white color.
+
+Try multimodal refernce game instance
 '''
