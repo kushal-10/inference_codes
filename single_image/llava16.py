@@ -46,7 +46,8 @@ def pad_images(images):
 image1 = Image.open(requests.get("https://llava-vl.github.io/static/images/view.jpg", stream=True).raw)
 image2 = Image.open(requests.get("http://images.cocodataset.org/val2017/000000039769.jpg", stream=True).raw)
 
-image_padded = pad_images([image1, image2])
+images_padded1 = pad_images([image1])
+images_padded2 = pad_images([image1, image2])
 
 model_id = "llava-hf/llava-v1.6-mistral-7b-hf"
 # model_id = "llava-hf/llava-v1.6-vicuna-7b-hf"
@@ -79,13 +80,13 @@ prompt_message2 = temp.render(messages=messages_multiple_image)
 processor = AutoProcessor.from_pretrained(model_id, use_fast=False, device_map="auto", verbose=False)
 model = AutoModelForVision2Seq.from_pretrained(model_id, device_map="auto", torch_dtype="auto")
 
-inputs = processor(prompt_message1, images=image_padded, return_tensors="pt").to("cuda")
+inputs = processor(prompt_message1, images=images_padded1, return_tensors="pt").to("cuda")
 output = model.generate(**inputs, max_new_tokens=200)
 generated_text = processor.batch_decode(output, skip_special_tokens=True)
 print("Output for Single image")
 print(generated_text)
 
-inputs = processor(prompt_message2, images=image_padded, return_tensors="pt").to("cuda")
+inputs = processor(prompt_message2, images=images_padded2, return_tensors="pt").to("cuda")
 output = model.generate(**inputs, max_new_tokens=200)
 generated_text = processor.batch_decode(output, skip_special_tokens=True)
 print("Output for Multiple image")
