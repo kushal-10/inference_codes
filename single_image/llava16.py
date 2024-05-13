@@ -57,25 +57,36 @@ vicuna_chat_template = '''A chat between a curious human and an artificial intel
 large_chat_template = "<|im_start|>system\nAnswer the questions.<|im_end|>{%- for message in messages -%}{% if message['role'] == 'user' %}{% if message['image']%}<|im_start|>user\n<image>\n{{message['content']}}<|im_end|>{% else %}<|im_start|>\nuser\n{{message['content']}}<|im_end|>{% endif %}{% elif message['role'] == 'assistant' %}<|im_start|>assistant\n{{message['content']}}<|im_end|>{% endif %}{% endfor %}<|im_start|>assistant\n"
 mistral_chat_template = "{% for message in messages %}{% if message['role'] == 'user' %}{% if message['image']%}[INST] <image>\n{{message['content']}} [/INST]{% else %}[INST]\n{{message['content']}} [/INST]{% endif %}{% elif message['role'] == 'assistant' %}{{message['content']}}{% endif %}{% endfor %}"
 
-mess = [
+messages_single_image = [
+    {'role': 'system', 'content': 'This is a system message'},
+    {'role': 'user', 'content': 'What is shown in the image?', 'image': 'https://llava-vl.github.io/static/images/view.jpg'},
+    {'role': 'assistant', 'content': 'A lake, A deck and A forest.'},
+    {'role': 'user', 'content': 'Explain a bit more about this image'}]
+
+messages_multiple_image = [
     {'role': 'system', 'content': 'This is a system message'},
     {'role': 'user', 'content': 'What is shown in the image?', 'image': 'https://llava-vl.github.io/static/images/view.jpg'},
     {'role': 'assistant', 'content': 'A lake, A deck and A forest.'},
     {'role': 'user', 'content': 'Explain a bit more about this image'},
     {'role': 'assistant', 'content': 'The image features a serene scene of a lake with a pier extending out into the water. The pier is made of wood and appears to be a popular spot for relaxation and enjoying the view. The lake is surrounded by a forest, adding to the natural beauty of the area. The overall atmosphere of the image is peaceful and inviting.'},
-    {'role': 'user', 'content': 'Explain a bit about this image.', 'image': ['http://images.cocodataset.org/val2017/000000039769.jpg', 'https://llava-vl.github.io/static/images/view.jpg']}
+    {'role': 'user', 'content': 'Explain a bit about this image.', 'image': 'http://images.cocodataset.org/val2017/000000039769.jpg'}
 ]
 
-listt = []
 temp = Template(mistral_chat_template)
-promptu = temp.render(messages=mess)
-listt.append(promptu)
-print(listt)
+prompt_message1 = temp.render(messages=messages_single_image)
+prompt_message2 = temp.render(messages=messages_multiple_image)
 
 processor = AutoProcessor.from_pretrained(model_id, use_fast=False, device_map="auto", verbose=False)
 model = AutoModelForVision2Seq.from_pretrained(model_id, device_map="auto", torch_dtype="auto")
 
-inputs = processor(listt[0], images=image_padded, return_tensors="pt").to("cuda")
+inputs = processor(prompt_message1, images=image_padded, return_tensors="pt").to("cuda")
 output = model.generate(**inputs, max_new_tokens=200)
 generated_text = processor.batch_decode(output, skip_special_tokens=True)
+print("Output for Single image")
+print(generated_text)
+
+inputs = processor(prompt_message2, images=image_padded, return_tensors="pt").to("cuda")
+output = model.generate(**inputs, max_new_tokens=200)
+generated_text = processor.batch_decode(output, skip_special_tokens=True)
+print("Output for Multiple image")
 print(generated_text)
