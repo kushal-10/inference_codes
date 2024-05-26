@@ -13,11 +13,14 @@ processor = AutoProcessor.from_pretrained(model_id)
 
 model_config = AutoConfig.from_pretrained(model_id)
 
+context = 0
 # Some models have 'max_position_embeddings' others have - 'max_sequence_length' 
 if hasattr(model_config, "text_config"):
     context = model_config.text_config.max_position_embeddings
 elif hasattr(model_config, "max_sequence_length"):
-    context = model_config.max_sequence_length
+    context = model_config.max_sequence_lengths
+print(context)
+
 
 # Instruct the model to create a caption in Spanish
 prompt = "caption es"
