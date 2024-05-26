@@ -17,9 +17,12 @@ context = 0
 # Some models have 'max_position_embeddings' others have - 'max_sequence_length' 
 if hasattr(model_config, "text_config"):
     context = model_config.text_config.max_position_embeddings
+    print("uses max position embeddings")
 elif hasattr(model_config, "max_sequence_length"):
     context = model_config.max_sequence_lengths
-print(context)
+    print("uses max sequence length")
+
+print(context) #8192 context
 
 
 # Instruct the model to create a caption in Spanish
