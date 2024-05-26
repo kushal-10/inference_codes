@@ -1,4 +1,4 @@
-from transformers import AutoProcessor, PaliGemmaForConditionalGeneration
+from transformers import AutoProcessor, AutoModelForVision2Seq, AutoConfig
 from PIL import Image
 import requests
 import torch
@@ -8,8 +8,16 @@ model_id = "google/paligemma-3b-mix-224"
 url = "https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers/tasks/car.jpg?download=true"
 image = Image.open(requests.get(url, stream=True).raw)
 
-model = PaliGemmaForConditionalGeneration.from_pretrained(model_id).eval()
+model = AutoModelForVision2Seq.from_pretrained(model_id).eval()
 processor = AutoProcessor.from_pretrained(model_id)
+
+model_config = AutoConfig.from_pretrained(model_id)
+
+# Some models have 'max_position_embeddings' others have - 'max_sequence_length' 
+if hasattr(model_config, "text_config"):
+    context = model_config.text_config.max_position_embeddings
+elif hasattr(model_config, "max_sequence_length"):
+    context = model_config.max_sequence_length
 
 # Instruct the model to create a caption in Spanish
 prompt = "caption es"
