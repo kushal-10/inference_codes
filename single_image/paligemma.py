@@ -26,10 +26,12 @@ model_config = AutoConfig.from_pretrained(model_id)
 
 # Check chat template
 messages = [
-  {"role": "user", "content": "Hello, how are you?"},
+  {"role": "user", "content": "What can you see in this image? Explain in extreme detail", 'image': 'https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers/tasks/car.jpg?download=true'},
   {"role": "assistant", "content": "I'm doing great. How can I help you today?"},
-  {"role": "user", "content": "What can you see in this image? Explain in extreme detail"},
+  {"role": "user", "content": "Explain more about this image"},
 ]
+
+
 
 # Doesn't have a chat template, because not chat-optimized, try with llava template anyway :)
 jinja_template = "{%- for message in messages -%}{% if message['role'] == 'user' %}{% if message['image'] %}\nUSER: <image>\n{{message['content']}}{% else %}\nUSER:\n{{message['content']}}{% endif %}{% elif message['role'] == 'assistant' %}\nASSISTANT:{{message['content']}}{% endif %}{% endfor %}\nASSISTANT:"
@@ -47,3 +49,11 @@ with torch.inference_mode():
     generation = generation[0][input_len:]
     decoded = processor.decode(generation, skip_special_tokens=True)
     print(decoded)
+
+
+'''
+SOME RESPONSES - 
+
+Q - What can you see in this image? Explain in extreme detail
+A - Sorry, as a base VLM I am not trained to answer this question.
+'''
