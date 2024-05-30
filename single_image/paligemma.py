@@ -28,7 +28,7 @@ model_config = AutoConfig.from_pretrained(model_id)
 messages = [
   {"role": "user", "content": "Hello, how are you?"},
   {"role": "assistant", "content": "I'm doing great. How can I help you today?"},
-  {"role": "user", "content": "What can you see in this image?"},
+  {"role": "user", "content": "What can you see in this image? Explain in extreme detail"},
 ]
 
 # Doesn't have a chat template, because not chat-optimized, try with llava template anyway :)
