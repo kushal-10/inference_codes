@@ -18,6 +18,7 @@ model_id = "google/paligemma-3b-mix-224"
 
 url = "https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers/tasks/car.jpg?download=true"
 image = Image.open(requests.get(url, stream=True).raw)
+image1 = Image.open(requests.get("https://llava-vl.github.io/static/images/view.jpg", stream=True).raw)
 image2 = Image.open(requests.get("http://images.cocodataset.org/val2017/000000039769.jpg", stream=True).raw)
 
 # Use a temp API token, remove after testing form HF account
@@ -31,9 +32,7 @@ model_config = AutoConfig.from_pretrained(model_id, token=huggingface_api_key)
 # Check chat template
 # Doesn't require an <image> token
 messages = [
-  {"role": "user", "content": "What can you see in this image? Explain in extreme detail"},
-  {"role": "assistant", "content": "A green car in front of a wall."},
-  {"role": "user", "content": "What can you see in this image?"}
+  {"role": "user", "content": "How are these 3 images different than one another?"}
 ]
 
 # Doesn't have a chat template, because not chat-optimized, try with llava template anyway :)
@@ -58,7 +57,7 @@ with torch.inference_mode():
 
 '''
 SOME RESPONSES - 
-
+# Single image
 Q - What can you see in this image? Explain in extreme detail
 A - Sorry, as a base VLM I am not trained to answer this question.
 
@@ -78,4 +77,14 @@ Car is parked on the road.
 Car is parked on the road.
 Car is parked on the road.
 Car is parked on the road.
+
+Accepts two images (Doesnot throw an error, but bad response)
+Q - "What can you see in this image? Explain in extreme detail"
+A - "A green car in front of a wall."
+Q - "What can you see in this image?"
+A - Car.
+
+Three images (image of a car in front of a wall, lake view, two cats on a couch)
+Q - How are these 3 images different than one another?
+A - 
 '''
