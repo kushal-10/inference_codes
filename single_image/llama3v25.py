@@ -2,6 +2,7 @@
 import torch
 from PIL import Image
 from transformers import AutoModel, AutoTokenizer
+import requests
 
 model = AutoModel.from_pretrained('openbmb/MiniCPM-Llama3-V-2_5', trust_remote_code=True, torch_dtype=torch.float16)
 model = model.to(device='cuda')
@@ -9,7 +10,7 @@ model = model.to(device='cuda')
 tokenizer = AutoTokenizer.from_pretrained('openbmb/MiniCPM-Llama3-V-2_5', trust_remote_code=True)
 model.eval()
 
-image = Image.open('xx.jpg').convert('RGB')
+image = Image.open(requests.get("https://llava-vl.github.io/static/images/view.jpg", stream=True).raw)
 question = 'What is in the image?'
 msgs = [{'role': 'user', 'content': question}]
 
