@@ -36,23 +36,28 @@ messages = [
 ]
 
 # Doesn't have a chat template, because not chat-optimized, try with llava template anyway :)
+# Remove <image> token from template
 jinja_template = "{%- for message in messages -%}{% if message['role'] == 'user' %}\nUSER:\n{{message['content']}}{% elif message['role'] == 'assistant' %}\nASSISTANT:{{message['content']}}{% endif %}{% endfor %}\nASSISTANT:"
 
 temp = Template(jinja_template)
 prompt = temp.render(messages=messages)
 
-print(f"PROMPT - {prompt}")
+model_inputs = processor(text=prompt, images=[image, image1, image2], return_tensors="pt")
+# input_len = model_inputs["input_ids"].shape[-1]
 
-# # Instruct the model to create a caption in Spanish
-# prompt = "caption es"
-model_inputs = processor(text=prompt, images=[image, image2], return_tensors="pt")
-input_len = model_inputs["input_ids"].shape[-1]
+generation = model.generate(**model_inputs, max_new_tokens=100)
+# generation = generation[0][input_len:]
+decoded = processor.decode(generation, skip_special_tokens=True)
+print(f"decoded - {decoded}")
 
-with torch.inference_mode():
-    generation = model.generate(**model_inputs, max_new_tokens=100, do_sample=False)
-    generation = generation[0][input_len:]
-    decoded = processor.decode(generation, skip_special_tokens=True)
-    print(decoded)
+split_prefix = "ASSISTANT:"
+response_text = decoded[0].split(split_prefix)[-1] # Get the last assistant response
+cull=False
+if cull:
+    rt_split = response_text.split(cull) # Cull from End of String token
+    response_text = rt_split[0]
+response_text = response_text.strip()
+print(f"Response text - {response_text}")
 
 
 '''
@@ -86,5 +91,5 @@ A - Car.
 
 Three images (image of a car in front of a wall, lake view, two cats on a couch)
 Q - How are these 3 images different than one another?
-A - 
+A - Sorry, as a base VLM I am not trained to answer this question.
 '''
