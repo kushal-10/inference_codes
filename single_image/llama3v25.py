@@ -1,14 +1,25 @@
 # test.py
 import torch
 from PIL import Image
-from transformers import AutoModel, AutoTokenizer, AutoModelForVision2Seq
+from transformers import AutoModel, AutoTokenizer, AutoModelForVision2Seq, AutoConfig
 import requests
 
-model = AutoModel.from_pretrained('openbmb/MiniCPM-Llama3-V-2_5', trust_remote_code=True, torch_dtype=torch.float16)
+model = AutoModelForVision2Seq.from_pretrained('openbmb/MiniCPM-Llama3-V-2_5', trust_remote_code=True, torch_dtype=torch.float16)
 model = model.to(device='cuda')
 
 tokenizer = AutoTokenizer.from_pretrained('openbmb/MiniCPM-Llama3-V-2_5', trust_remote_code=True)
 model.eval()
+
+model_config = AutoConfig.from_pretrained('openbmb/MiniCPM-Llama3-V-2_5', trust_remote_code=True)
+if hasattr(model_config, "text_config"):
+    context = model_config.text_config.max_position_embeddings
+elif hasattr(model_config, "max_sequence_length"):
+    context = model_config.max_sequence_length
+else:
+    context = 10
+
+print(f"Context : {context}")
+
 
 image = Image.open(requests.get("https://llava-vl.github.io/static/images/view.jpg", stream=True).raw)
 image1 = Image.open(requests.get("http://images.cocodataset.org/val2017/000000039769.jpg", stream=True).raw)
