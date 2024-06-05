@@ -12,7 +12,7 @@ model.eval()
 
 image = Image.open(requests.get("https://llava-vl.github.io/static/images/view.jpg", stream=True).raw)
 question = 'What is in the image?'
-msgs = [{'role': 'user', 'content': question}]
+msgs = [{'role': 'user', 'content': question, 'image': "https://llava-vl.github.io/static/images/view.jpg"}]
 
 res = model.chat(
     image=image,
