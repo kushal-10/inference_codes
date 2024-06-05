@@ -23,7 +23,7 @@ res = model.chat(
     msgs=msgs,
     tokenizer=tokenizer,
     sampling=True, # if sampling=False, beam_search will be used by default
-    temperature=0.0001,
+    temperature=0.5,
     # system_prompt='' # pass system_prompt if needed
 )
 print(res)
@@ -34,4 +34,23 @@ Does not accept system message
 Accepts multiple images but bad response
 
 Doesnot work when temperature is strictly 0
+
+Major Hallucinations - Given images 1) lake and 2) two cats
+Output with t=0.0001
+The two images are different in several ways:
+
+1. Content: The first image shows a person holding a smartphone, while the second image shows a person holding a tablet.
+
+2. Device: The first image features a smartphone, which is typically smaller and more portable than a tablet. The second image features a tablet, which is larger and often used for tasks that require more screen space.
+
+3. Screen size: The first image shows a smaller screen, while the second image shows a larger screen.
+
+4. Usage: Smartphones are often used for communication, social media, and other personal activities, while tablets are often used for work, entertainment, and other productivity tasks.
+
+5. Design: The design of the devices may also differ, with smartphones typically having a more compact and sleek design, while tablets may have a larger and more robust design.
+
+Overall, these two images depict different types of devices and their respective uses, highlighting the diversity of technology available to us today.
+
+
+Try with a higher temperature
 '''
