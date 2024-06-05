@@ -27,7 +27,7 @@ res = model.chat(
     msgs=msgs,
     tokenizer=tokenizer,
     sampling=True, # if sampling=False, beam_search will be used by default
-    temperature=0,
+    temperature=0.0001,
     # system_prompt='' # pass system_prompt if needed
 )
 print(res)
@@ -36,4 +36,6 @@ print(res)
 Does not accept system message 
 
 Accepts multiple images but bad response
+
+Doesnot work when temperature is strictly 0
 '''
