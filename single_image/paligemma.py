@@ -35,7 +35,7 @@ messages = [
 ]
 
 # Doesn't have a chat template, because not chat-optimized, try with llava template anyway :)
-jinja_template = "{%- for message in messages -%}{% if message['role'] == 'user' %}{% if message['image'] %}\nUSER: <image>\n{{message['content']}}{% else %}\nUSER:\n{{message['content']}}{% endif %}{% elif message['role'] == 'assistant' %}\nASSISTANT:{{message['content']}}{% endif %}{% endfor %}\nASSISTANT:"
+jinja_template = "{%- for message in messages -%}{% if message['role'] == 'user' %}{% if message['image'] %}\nUSER: \n{{message['content']}}{% else %}\nUSER:\n{{message['content']}}{% endif %}{% elif message['role'] == 'assistant' %}\nASSISTANT:{{message['content']}}{% endif %}{% endfor %}\nASSISTANT:"
 
 temp = Template(jinja_template)
 prompt = temp.render(messages=messages)
