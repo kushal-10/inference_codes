@@ -24,13 +24,14 @@ res = model.chat(
     tokenizer=tokenizer,
     sampling=True, # if sampling=False, beam_search will be used by default
     temperature=0.5,
+    mmax_new_tokens=100,
     # system_prompt='' # pass system_prompt if needed
 )
 print(res)
 
 '''
 NOTES : 
-1) Does not accept system message 
+1) Does accept system message, but needs to be passed separately
 
 2) Accepts multiple images but bad response
 
