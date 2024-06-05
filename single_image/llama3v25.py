@@ -1,7 +1,7 @@
 # test.py
 import torch
 from PIL import Image
-from transformers import AutoModel, AutoTokenizer
+from transformers import AutoModel, AutoTokenizer, AutoModelForVision2Seq
 import requests
 
 model = AutoModel.from_pretrained('openbmb/MiniCPM-Llama3-V-2_5', trust_remote_code=True, torch_dtype=torch.float16)
