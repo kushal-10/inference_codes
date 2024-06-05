@@ -47,7 +47,8 @@ model_inputs = processor(text=prompt, images=[image, image1, image2], return_ten
 
 generation = model.generate(**model_inputs, max_new_tokens=100)
 # generation = generation[0][input_len:]
-decoded = processor.decode(generation, skip_special_tokens=True)
+print(f"generation - {generation}")
+decoded = processor.batch_decode(generation, skip_special_tokens=True)
 print(f"decoded - {decoded}")
 
 split_prefix = "ASSISTANT:"
