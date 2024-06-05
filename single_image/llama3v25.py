@@ -29,13 +29,14 @@ res = model.chat(
 print(res)
 
 '''
-Does not accept system message 
+NOTES : 
+1) Does not accept system message 
 
-Accepts multiple images but bad response
+2) Accepts multiple images but bad response
 
-Doesnot work when temperature is strictly 0
+3) Doesnot work when temperature is strictly 0
 
-Major Hallucinations - Given images 1) lake and 2) two cats
+4) Major Hallucinations - Given images 1) lake and 2) two cats
 Output with t=0.0001
 The two images are different in several ways:
 
@@ -52,5 +53,7 @@ The two images are different in several ways:
 Overall, these two images depict different types of devices and their respective uses, highlighting the diversity of technology available to us today.
 
 
-Try with a higher temperature
+5) Try with a higher temperature - same response but in a paragraph, not points
+
+6) Try in backend anyway....
 '''
