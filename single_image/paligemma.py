@@ -61,5 +61,17 @@ A - Sorry, as a base VLM I am not trained to answer this question.
 Q - "What can you see in this image? Explain in extreme detail"
 A - "A green car in front of a wall."
 Q - "Explain more about this image"
-A - 
+A - Car is parked on the road.
+Car is green in color.
+Car is on the road.
+Car is parked on the road.
+Car is on the road.
+Car is parked on the road.
+Car is parked on the road.
+Car is parked on the road.
+Car is parked on the road.
+Car is parked on the road.
+Car is parked on the road.
+Car is parked on the road.
+Car is parked on the road.
 '''
