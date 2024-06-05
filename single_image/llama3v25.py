@@ -15,7 +15,6 @@ image1 = Image.open(requests.get("http://images.cocodataset.org/val2017/00000003
 
 question = 'What is in the image?'
 msgs = [
-    {'role': 'system', 'content': 'This is a system message'},
     {'role': 'user', 'content': 'What is shown in the image?', 'image': 'https://llava-vl.github.io/static/images/view.jpg'},
     {'role': 'assistant', 'content': ' A lake, A deck and A forest.'},
     {'role': 'user', 'content': 'Explain a bit more about this image'},
@@ -32,3 +31,7 @@ res = model.chat(
     # system_prompt='' # pass system_prompt if needed
 )
 print(res)
+
+'''
+Does not accept system message 
+'''
