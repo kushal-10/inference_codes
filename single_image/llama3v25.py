@@ -11,11 +11,20 @@ tokenizer = AutoTokenizer.from_pretrained('openbmb/MiniCPM-Llama3-V-2_5', trust_
 model.eval()
 
 image = Image.open(requests.get("https://llava-vl.github.io/static/images/view.jpg", stream=True).raw)
+image1 = Image.open(requests.get("http://images.cocodataset.org/val2017/000000039769.jpg", stream=True).raw)
+
 question = 'What is in the image?'
-msgs = [{'role': 'user', 'content': question, 'image': "https://llava-vl.github.io/static/images/view.jpg"}]
+msgs = [
+    {'role': 'system', 'content': 'This is a system message'},
+    {'role': 'user', 'content': 'What is shown in the image?', 'image': 'https://llava-vl.github.io/static/images/view.jpg'},
+    {'role': 'assistant', 'content': ' A lake, A deck and A forest.'},
+    {'role': 'user', 'content': 'Explain a bit more about this image'},
+    {'role': 'assistant', 'content': 'The image features a serene scene of a lake with a pier extending out into the water. The pier is made of wood and appears to be a popular spot for relaxation and enjoying the view. The lake is surrounded by a forest, adding to the natural beauty of the area. The overall atmosphere of the image is peaceful and inviting.'},
+    {'role': 'user', 'content': 'What is shown in this image?', 'image': 'http://images.cocodataset.org/val2017/000000039769.jpg'}
+]
 
 res = model.chat(
-    image=image,
+    image=[image, image1],
     msgs=msgs,
     tokenizer=tokenizer,
     sampling=True, # if sampling=False, beam_search will be used by default
