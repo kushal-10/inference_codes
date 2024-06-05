@@ -5,5 +5,5 @@ modelids = ["HuggingFaceM4/idefics-9b-instruct",
             "llava-hf/llava-1.5-13b-hf"]
 
 for id in modelids:
-    model_config = AutoConfig.from_pretrained(id, token=None)
+    model_config = AutoConfig.from_pretrained(id, token="")
     print(model_config)
