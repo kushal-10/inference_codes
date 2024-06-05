@@ -3,6 +3,15 @@ from PIL import Image
 import requests
 import torch
 from jinja2 import Template
+import json
+
+
+# Load the JSON data from the file
+with open('key.json', 'r') as file:
+    data = json.load(file)
+
+# Retrieve the api_key for huggingface
+huggingface_api_key = data['huggingface']['api_key']
 
 
 model_id = "google/paligemma-3b-mix-224"
@@ -10,19 +19,13 @@ model_id = "google/paligemma-3b-mix-224"
 url = "https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers/tasks/car.jpg?download=true"
 image = Image.open(requests.get(url, stream=True).raw)
 
-model = AutoModelForVision2Seq.from_pretrained(model_id).eval()
-processor = AutoProcessor.from_pretrained(model_id)
-model_config = AutoConfig.from_pretrained(model_id)
+# Use a temp API token, remove after testing form HF account
 
-# context = 0
-# # Some models have 'max_position_embeddings' others have - 'max_sequence_length' 
-# if hasattr(model_config, "text_config"):
-#     context = model_config.text_config.max_position_embeddings
-#     print("uses max position embeddings")
-# elif hasattr(model_config, "max_sequence_length"):
-#     context = model_config.max_sequence_lengths
-#     print("uses max sequence length")
-# print(context) #8192 context
+model = AutoModelForVision2Seq.from_pretrained(model_id, token=huggingface_api_key).eval()
+processor = AutoProcessor.from_pretrained(model_id, token=huggingface_api_key)
+model_config = AutoConfig.from_pretrained(model_id, token=huggingface_api_key)
+
+#8192 context
 
 # Check chat template
 messages = [
@@ -30,8 +33,6 @@ messages = [
   {"role": "assistant", "content": "I'm doing great. How can I help you today?"},
   {"role": "user", "content": "Explain more about this image"},
 ]
-
-
 
 # Doesn't have a chat template, because not chat-optimized, try with llava template anyway :)
 jinja_template = "{%- for message in messages -%}{% if message['role'] == 'user' %}{% if message['image'] %}\nUSER: <image>\n{{message['content']}}{% else %}\nUSER:\n{{message['content']}}{% endif %}{% elif message['role'] == 'assistant' %}\nASSISTANT:{{message['content']}}{% endif %}{% endfor %}\nASSISTANT:"
