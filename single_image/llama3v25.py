@@ -56,5 +56,9 @@ Overall, these two images depict different types of devices and their respective
 
 5) Try with a higher temperature - same response but in a paragraph, not points
 
+5.1) Hallucinations are real bad - 
+The two images are different in their content and context. The first image is a painting of a man with a mustache, while the second image is a photograph of a person with a mustache. The painting is an artistic representation, while the photograph is a real-life depiction. Additionally, the style and technique used to create the images differ, with the painting likely being created using traditional art materials such as oil or acrylic paint, and the photograph being taken with a camera.
+
+
 6) Try in backend anyway....
 '''
