@@ -7,7 +7,7 @@ from transformers import AutoModel, AutoTokenizer
 torch.set_grad_enabled(False)
 
 # init model and tokenizer
-model = AutoModel.from_pretrained('internlm/internlm-xcomposer2d5-7b', torch_dtype=torch.bfloat16, trust_remote_code=True, device_map='auto').cuda().eval()
+model = AutoModel.from_pretrained('internlm/internlm-xcomposer2d5-7b', torch_dtype=torch.bfloat16, trust_remote_code=True).cuda().eval()
 tokenizer = AutoTokenizer.from_pretrained('internlm/internlm-xcomposer2d5-7b', trust_remote_code=True)
 model.tokenizer = tokenizer
 
@@ -18,11 +18,3 @@ image = ['./examples/cars1.jpg',
 with torch.autocast(device_type='cuda', dtype=torch.float16):
     response, his = model.chat(tokenizer, query, image, do_sample=False, num_beams=3, use_meta=True)
 print(response)
-
-# query = 'Image4 <ImageHere>; How about the car in Image4'
-# image.append('./examples/cars4.jpg')
-# with torch.autocast(device_type='cuda', dtype=torch.float16):
-#     response, _ = model.chat(tokenizer, query, image, do_sample=False, num_beams=3, history= his, use_meta=True)
-# print(response)
-
-
