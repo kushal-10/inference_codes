@@ -1,3 +1,6 @@
+
+# Requires a new package - decord==0.6.0
+
 import torch
 from transformers import AutoModel, AutoTokenizer
 
