@@ -7,7 +7,7 @@ from transformers import AutoModel, AutoTokenizer
 torch.set_grad_enabled(False)
 
 # init model and tokenizer
-model = AutoModel.from_pretrained('internlm/internlm-xcomposer2d5-7b', torch_dtype=torch.bfloat16, trust_remote_code=True, devie_map='auto').cuda().eval()
+model = AutoModel.from_pretrained('internlm/internlm-xcomposer2d5-7b', torch_dtype=torch.bfloat16, trust_remote_code=True, device_map='auto').cuda().eval()
 tokenizer = AutoTokenizer.from_pretrained('internlm/internlm-xcomposer2d5-7b', trust_remote_code=True)
 model.tokenizer = tokenizer
 
