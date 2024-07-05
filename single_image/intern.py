@@ -9,7 +9,6 @@ torch.set_grad_enabled(False)
 # init model and tokenizer
 model = AutoModel.from_pretrained('internlm/internlm-xcomposer2d5-7b', torch_dtype=torch.bfloat16, trust_remote_code=True).cuda().eval()
 tokenizer = AutoTokenizer.from_pretrained('internlm/internlm-xcomposer2d5-7b', trust_remote_code=True)
-processor = AutoProcessor.from_pretrained('internlm/internlm-xcomposer2d5-7b', )
 model.tokenizer = tokenizer
 
 query = 'Image1 <ImageHere>; Image2 <ImageHere>; Image3 <ImageHere>; Image4 <ImageHere>; I want to buy a car from the three given cars, analyze their advantages and weaknesses one by one'
