@@ -17,42 +17,18 @@ def load_image(image_path: str) -> Image:
         image = Image.open(image_path).convert('RGB')
     return image
 
-def pad_images(images):
-    '''
-    Pad the images. Only used for LLaVA NeXT models
-    Will be deprecated when issue https://github.com/huggingface/transformers/issues/29832 is closed
-    '''
-    # Determine the maximum width and height among all images
-    max_width = max(image.size[0] for image in images)
-    max_height = max(image.size[1] for image in images)
-
-    # Create and return a list of padded images
-    padded_images = []
-    for image in images:
-        # Create a new image with a black background
-        new_image = Image.new("RGB", (max_width, max_height))
-
-        # Calculate the position to paste the image so that it's centered
-        x = (max_width - image.size[0]) // 2
-        y = (max_height - image.size[1]) // 2
-
-        # Paste the original image onto the new image
-        new_image.paste(image, (x, y))
-        padded_images.append(new_image)
-
-    return padded_images
 
 
 image1 = Image.open(requests.get("https://llava-vl.github.io/static/images/view.jpg", stream=True).raw)
 image2 = Image.open(requests.get("http://images.cocodataset.org/val2017/000000039769.jpg", stream=True).raw)
 
-images_padded1 = pad_images([image1])
-images_padded2 = pad_images([image1, image2])
+# images_padded1 = pad_images([image1])
+# images_padded2 = pad_images([image1, image2])
 
-model_id = "llava-hf/llava-v1.6-mistral-7b-hf"
+# model_id = "llava-hf/llava-v1.6-mistral-7b-hf"
 # model_id = "llava-hf/llava-v1.6-vicuna-7b-hf"
 # model_id = "llava-hf/llava-v1.6-vicuna-13b-hf"
-# model_id = "llava-hf/llava-v1.6-34b-hf"
+model_id = "llava-hf/llava-v1.6-34b-hf"
 
 vicuna_chat_template = '''A chat between a curious human and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the human's questions.{% for message in messages %}{% if message['role'] == 'user' %}{% if message['image'] %}USER:<image>\n{{message['content']}}{% else %}USER:\n{{message['content']}}{% endif %}{% elif message['role'] == 'assistant' %}ASSISTANT:{{message['content']}}{% endif %}{% endfor %}ASSISTANT:'''
 large_chat_template = "<|im_start|>system\nAnswer the questions.<|im_end|>{%- for message in messages -%}{% if message['role'] == 'user' %}{% if message['image']%}<|im_start|>user\n<image>\n{{message['content']}}<|im_end|>{% else %}<|im_start|>\nuser\n{{message['content']}}<|im_end|>{% endif %}{% elif message['role'] == 'assistant' %}<|im_start|>assistant\n{{message['content']}}<|im_end|>{% endif %}{% endfor %}<|im_start|>assistant\n"
@@ -73,21 +49,21 @@ messages_multiple_image = [
     {'role': 'user', 'content': 'Explain a bit about this image.', 'image': 'http://images.cocodataset.org/val2017/000000039769.jpg'}
 ]
 
-temp = Template(mistral_chat_template)
+temp = Template(large_chat_template)
 prompt_message1 = temp.render(messages=messages_single_image)
 prompt_message2 = temp.render(messages=messages_multiple_image)
 
 processor = AutoProcessor.from_pretrained(model_id, use_fast=False, device_map="auto", verbose=False)
 model = AutoModelForVision2Seq.from_pretrained(model_id, device_map="auto", torch_dtype="auto")
 
-inputs = processor(prompt_message1, images=images_padded1, return_tensors="pt").to("cuda")
+inputs = processor(prompt_message1, images=[image1], return_tensors="pt").to("cuda")
 output = model.generate(**inputs, max_new_tokens=200)
 generated_text = processor.batch_decode(output, skip_special_tokens=True)
 print("Output for Single image")
 print(generated_text)
 
-inputs = processor(prompt_message2, images=images_padded2, return_tensors="pt").to("cuda")
-output = model.generate(**inputs, max_new_tokens=200)
-generated_text = processor.batch_decode(output, skip_special_tokens=True)
-print("Output for Multiple image")
-print(generated_text)
+# inputs = processor(prompt_message2, images=images_padded2, return_tensors="pt").to("cuda")
+# output = model.generate(**inputs, max_new_tokens=200)
+# generated_text = processor.batch_decode(output, skip_special_tokens=True)
+# print("Output for Multiple image")
+# print(generated_text)
