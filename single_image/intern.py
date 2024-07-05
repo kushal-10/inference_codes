@@ -7,7 +7,7 @@ from transformers import AutoModel, AutoTokenizer
 torch.set_grad_enabled(False)
 
 # init model and tokenizer
-model = AutoModel.from_pretrained('internlm/internlm-xcomposer2d5-7b', torch_dtype=torch.bfloat16, trust_remote_code=True)
+model = AutoModel.from_pretrained('internlm/internlm-xcomposer2d5-7b', torch_dtype=torch.bfloat16, trust_remote_code=True).cuda().eval()
 tokenizer = AutoTokenizer.from_pretrained('internlm/internlm-xcomposer2d5-7b', trust_remote_code=True)
 model.tokenizer = tokenizer
 
@@ -19,6 +19,4 @@ with torch.autocast(device_type='cuda', dtype=torch.float16):
     response, his = model.chat(tokenizer, query, image, do_sample=False, num_beams=3, use_meta=True)
 print(response)
 
-print(f"History : {his}")
-## Test Jinja template
-
+print(f" eet eez dey eestory of Toinham: {his}")
