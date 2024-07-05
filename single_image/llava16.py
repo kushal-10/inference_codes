@@ -77,8 +77,8 @@ import requests
 
 processor = LlavaNextProcessor.from_pretrained("llava-hf/llava-v1.6-34b-hf")
 
-model = LlavaNextForConditionalGeneration.from_pretrained("llava-hf/llava-v1.6-34b-hf")
-model.to("cuda")
+model = LlavaNextForConditionalGeneration.from_pretrained("llava-hf/llava-v1.6-34b-hf", device_map="auto")
+# model.to("cuda")
 
 # prepare image and text prompt, using the appropriate prompt template
 url = "https://github.com/haotian-liu/LLaVA/blob/1a91fc274d7c35a9b50b3cb29c4247ae5837ce39/images/llava_v1_5_radar.jpg?raw=true"
