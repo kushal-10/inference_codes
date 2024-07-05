@@ -28,12 +28,12 @@ with torch.autocast(device_type='cuda', dtype=torch.float16):
 print(response)
 print(f"Second history {his2}")
 
-query = 'Image5 <ImageHere>; How about the car in Image5'
-image.append('./examples/cars1.jpg')
-with torch.autocast(device_type='cuda', dtype=torch.float16):
-    response, his3 = model.chat(tokenizer, query, image, do_sample=False, num_beams=3, history= his2, use_meta=True)
-print(response)
-print(f"Second history {his3}")
+# query = 'Image5 <ImageHere>; How about the car in Image5'
+# image.append('./examples/cars1.jpg')
+# with torch.autocast(device_type='cuda', dtype=torch.float16):
+#     response, his3 = model.chat(tokenizer, query, image, do_sample=False, num_beams=3, history= his2, use_meta=True)
+# print(response)
+# print(f"Second history {his3}")
 
 
 
