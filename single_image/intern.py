@@ -17,5 +17,5 @@ image = ['./examples/cars1.jpg',
          './examples/cars3.jpg']
 # with torch.autocast(device_type='cuda', dtype=torch.float16):
 # with torch.autocast():
-response, his = model.chat(tokenizer, query, image, do_sample=True, num_beams=3, use_meta=True)
+response, his = model.chat(tokenizer, query, image, do_sample=True, num_beams=3, torch_dtype='auto')
 print(response)
