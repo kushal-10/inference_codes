@@ -15,6 +15,7 @@ query = 'Image1 <ImageHere>; Image2 <ImageHere>; Image3 <ImageHere>; I want to b
 image = ['./examples/cars1.jpg',
          './examples/cars2.jpg',
          './examples/cars3.jpg']
-with torch.autocast(device_type='cuda', dtype='auto'):
+# with torch.autocast(device_type='cuda', dtype=torch.float16):
+with torch.autocast():
     response, his = model.chat(tokenizer, query, image, do_sample=True, num_beams=3, use_meta=True)
 print(response)
