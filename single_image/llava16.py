@@ -53,8 +53,9 @@ temp = Template(large_chat_template)
 prompt_message1 = temp.render(messages=messages_single_image)
 prompt_message2 = temp.render(messages=messages_multiple_image)
 
-processor = AutoProcessor.from_pretrained(model_id, use_fast=False, device_map="auto", verbose=False)
-model = AutoModelForVision2Seq.from_pretrained(model_id, device_map="auto", torch_dtype="auto")
+processor = AutoProcessor.from_pretrained(model_id, device_map="auto", verbose=False)
+model = AutoModelForVision2Seq.from_pretrained(model_id, device_map="auto", torch_dtype="auto", low_cpu_mem_usage=True)
+print(model)
 
 inputs = processor(prompt_message1, images=[image1], return_tensors="pt").to("cuda")
 output = model.generate(**inputs, max_new_tokens=200)
