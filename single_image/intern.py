@@ -18,5 +18,22 @@ image = ['./examples/cars1.jpg',
 with torch.autocast(device_type='cuda', dtype=torch.float16):
     response, his = model.chat(tokenizer, query, image, do_sample=False, num_beams=3, use_meta=True)
 print(response)
+print(f"First history {his}")
+print(type(his[0]))
 
-print(f" eet eez dey eestory of Toinham: {his}")
+query = 'Image4 <ImageHere>; How about the car in Image4'
+image.append('./examples/cars4.jpg')
+with torch.autocast(device_type='cuda', dtype=torch.float16):
+    response, his2 = model.chat(tokenizer, query, image, do_sample=False, num_beams=3, history=his, use_meta=True)
+print(response)
+print(f"Second history {his2}")
+
+query = 'Image5 <ImageHere>; How about the car in Image5'
+image.append('./examples/cars1.jpg')
+with torch.autocast(device_type='cuda', dtype=torch.float16):
+    response, his3 = model.chat(tokenizer, query, image, do_sample=False, num_beams=3, history= his2, use_meta=True)
+print(response)
+print(f"Second history {his3}")
+
+
+
