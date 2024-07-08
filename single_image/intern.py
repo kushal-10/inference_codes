@@ -10,6 +10,7 @@ torch.set_grad_enabled(False)
 model = AutoModel.from_pretrained('internlm/internlm-xcomposer2d5-7b', torch_dtype=torch.bfloat16, trust_remote_code=True, device_map='auto')
 tokenizer = AutoTokenizer.from_pretrained('internlm/internlm-xcomposer2d5-7b', trust_remote_code=True, device_map='auto')
 model.tokenizer = tokenizer
+print(model)
 
 # query = 'Image1 <ImageHere>; Image2 <ImageHere>; Image3 <ImageHere>; I want to buy a car from the three given cars, analyze their advantages and weaknesses one by one'
 image = ['./examples/cars1.jpg',
