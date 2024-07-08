@@ -24,5 +24,5 @@ image = ['./examples/cars1.jpg',
 query = 'USER: Image1 <ImageHere>; Image2 <ImageHere>; Image3 <ImageHere>; I want to buy a car from the three given cars, analyze their advantages and weaknesses one by one ASSISTANT: To analyze the advantages and disadvantages of each car, we need to consider various factors such as performance, comfort, cost, maintenance, and brand reputation. USER: Image4 <ImageHere>; How about the car in Image4 ASSISTANT: '
 image.append('./examples/cars4.jpg')
 with torch.autocast(device_type='cuda', dtype=torch.float16):
-    response, _ = model.chat(tokenizer, query, image)
+    response, _ = model.chat(tokenizer, query, image).to('cuda')
 print(response)
