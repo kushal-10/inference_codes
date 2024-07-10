@@ -14,22 +14,23 @@ msg = [{'role': 'user', 'content': 'We are currently in this room. Please help m
 # msg = [{'role': 'user', 'content': 'Halloe akfawrgshs fneffivprs', 'image': 'https://temp.img'}]
 history = []
 image = []
-image_counter = 1
+image_counter = 0
 for m in msg:
     if m['role'] == 'user':
+        image_counter += 1
         prev_user_msg = m['content']
         if 'image' in m:
             if type(m['image']) == str:
                 # A single image is passed
                 prev_user_msg = f"Image{image_counter} <ImageHere>; " + prev_user_msg
                 image.append(m['image'])
-                image_counter += 1
             elif type(m['image']) == list:
                 # A list of images is passed
                 for img in m['image']:
                     prev_user_msg = f"Image{image_counter} <ImageHere>; " + prev_user_msg
-                    image_counter += 1
                     image.append(img)
+                    image_counter += 1
+                image_counter -= 1
             else:
                 print("Please pass a valid value of image in the message - Either a str or List[str]")
 
@@ -39,14 +40,15 @@ for m in msg:
 
 curr_message = prev_user_msg
 
-# print(history, curr_message)
-print(image, image_counter)
+# print(len(history), curr_message)
+# print(image, image_counter)
 
+# Image number [posiiton in message ] should reflect in Placeholder
 
 query = curr_message
 image.append('./examples/ADE_train_00016739.jpg')
 with torch.autocast(device_type='cuda', dtype=torch.float16):
-    response, his = model.chat(tokenizer, query, image, do_sample=False, num_beams=3, history=history, use_meta=True)
+    response, his = model.chat(tokenizer, query, image, do_sample=False, top_p=0, num_beams=3, history=history, use_meta=True)
 print(response)
 
 
