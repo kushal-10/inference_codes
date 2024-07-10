@@ -4,18 +4,21 @@ from transformers import AutoModel, AutoTokenizer
 torch.set_grad_enabled(False)
 
 # Define the CUDA devices you want to attempt loading on
-cuda_devices = [1, 2, 3]  # CUDA devices 1, 2, 3
+cuda_devices = [0, 1, 2, 3]  # Specify the available CUDA devices
 
-# Initialize model and tokenizer
 model = None
 for device_id in cuda_devices:
     try:
+        device_map = {key: f'cuda:{device_id}' for key in range(torch.cuda.device_count())}
+        # Try loading the model on the current CUDA device
         model = AutoModel.from_pretrained('internlm/internlm-xcomposer2d5-7b',
-                                          device_map={'cuda:0': f'cuda:{device_id}'},  # Specify the device map
+                                          device_map=device_map,  # Use the device map
                                           torch_dtype=torch.bfloat16,
-                                          trust_remote_code=True).to(f'cuda:{device_id}').eval()
+                                          trust_remote_code=True).eval()
+        model = model.to(f'cuda:{device_id}')
+
         tokenizer = AutoTokenizer.from_pretrained('internlm/internlm-xcomposer2d5-7b',
-                                                  device_map={'cuda:0': f'cuda:{device_id}'},  # Specify the device map
+                                                  device_map=device_map,  # Use the device map
                                                   trust_remote_code=True)
         model.tokenizer = tokenizer
         break  # If successful, break out of the loop
@@ -42,5 +45,6 @@ history = None
 for query, image_path in zip([query1, query2], images):
     # Perform inference with autocast and device placement
     with torch.autocast(device_type='cuda', dtype=torch.float16):
-        response, history = model.chat(tokenizer, query, images, do_sample=False, num_beams=3, history=history, use_meta=True)
+        response, history = model.chat(tokenizer, query, images, do_sample=False, num_beams=3, history=history,
+                                       use_meta=True)
     print(response)
