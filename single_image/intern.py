@@ -16,14 +16,14 @@ print(response)
 print(f"History: {his}")
 
 query = 'Image2 <ImageHere>; This is the second car.'
-image.append('./examples/cars2.jpg')
+image = ['./examples/cars2.jpg']
 with torch.autocast(device_type='cuda', dtype=torch.float16):
     response, his = model.chat(tokenizer, query, image, do_sample=False, num_beams=3, history= his, use_meta=True)
 print(response)
 print(f"History: {his}")
 
 query = 'Image3 <ImageHere>; This is the third car.'
-image.append('./examples/cars3.jpg')
+image = ['./examples/cars3.jpg']
 with torch.autocast(device_type='cuda', dtype=torch.float16):
     response, his = model.chat(tokenizer, query, image, do_sample=False, num_beams=3, history= his, use_meta=True)
 print(response)
