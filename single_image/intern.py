@@ -39,8 +39,8 @@ for m in msg:
 
 curr_message = prev_user_msg
 
-print(history, curr_message)
-print(image)
+# print(history, curr_message)
+print(image, image_counter)
 
 
 query = curr_message
