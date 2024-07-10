@@ -47,5 +47,5 @@ curr_message = prev_user_msg
 
 query = curr_message
 with torch.autocast(device_type='cuda', dtype=torch.float16):
-    response, his = model.chat(tokenizer, query, image, do_sample=False, top_p=0, num_beams=3, history=history, use_meta=True)
+    response, his = model.chat(tokenizer, query, image, do_sample=False, top_p=1, num_beams=3, history=history, use_meta=True)
 print(response)
