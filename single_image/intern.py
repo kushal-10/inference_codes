@@ -3,30 +3,44 @@ from transformers import AutoModel, AutoTokenizer
 
 torch.set_grad_enabled(False)
 
-# init model and tokenizer
-model = AutoModel.from_pretrained('internlm/internlm-xcomposer2d5-7b', device_map='auto', torch_dtype=torch.bfloat16, trust_remote_code=True).cuda().eval()
-tokenizer = AutoTokenizer.from_pretrained('internlm/internlm-xcomposer2d5-7b', device_map='auto', trust_remote_code=True)
-model.tokenizer = tokenizer
+# Define the CUDA devices you want to attempt loading on
+cuda_devices = [1, 2, 3]  # CUDA devices 1, 2, 3
 
-query = 'Image1 <ImageHere>; Image2 <ImageHere>; Image3 <ImageHere>; I want to buy a car from the three given cars, analyze their advantages and weaknesses one by one'
-image = ['./examples/cars1.jpg',
-        './examples/cars2.jpg',
-        './examples/cars3.jpg',]
-with torch.autocast(device_type='cuda', dtype=torch.float16):
-    response, his = model.chat(tokenizer, query, image, do_sample=False, num_beams=3, use_meta=True)
-print(response)
-#To analyze the advantages and disadvantages of each car, we need to consider factors such as brand reputation, performance, design, cost, and maintenance.
-#1. Mercedes-Benz: - Advantages: Known for its luxury and reliability, the Mercedes-Benz brand offers a high level of comfort, advanced technology, and superior craftsmanship. The vehicle in the image appears to be an SUV, which is versatile for both city driving and off-road conditions. - Disadvantages: Typically, Mercedes-Benz vehicles are more expensive compared to other brands, and they may require more frequent maintenance due to their luxury status.
-#2. Bugatti: - Advantages: Bugatti is renowned for producing some of the fastest and most powerful cars in the world. The vehicle in the image is a sports car, likely offering an exhilarating driving experience with its high-performance engine and advanced aerodynamics. - Disadvantages: Bugatti cars are extremely expensive, making them less accessible to the average consumer. They also require specialized knowledge for maintenance and may not be suitable for everyday driving due to their high-performance nature.
-#3. BMW: - Advantages: BMW is a well-respected manufacturer known for its innovative engineering and design. The car in the image appears to be an electric vehicle (EV), which offers advantages such as lower emissions, reduced noise pollution, and potentially lower operating costs. - Disadvantages: EVs like the one in the image may have a shorter range compared to traditional gasoline-powered vehicles, limiting their suitability for long-distance travel.
-#Additionally, the initial cost of purchasing an EV can be higher than that of a conventional car. In conclusion, each car has its own set of advantages and disadvantages. The Mercedes-Benz offers luxury and versatility, the Bugatti provides high performance and exclusivity, and the BMW represents innovation in electric vehicle technology. The choice ultimately depends on the buyer's priorities, such as comfort, performance, environmental impact, and budget.
+# Initialize model and tokenizer
+model = None
+for device_id in cuda_devices:
+    try:
+        model = AutoModel.from_pretrained('internlm/internlm-xcomposer2d5-7b',
+                                          device_map={'cuda:0': f'cuda:{device_id}'},  # Specify the device map
+                                          torch_dtype=torch.bfloat16,
+                                          trust_remote_code=True).to(f'cuda:{device_id}').eval()
+        tokenizer = AutoTokenizer.from_pretrained('internlm/internlm-xcomposer2d5-7b',
+                                                  device_map={'cuda:0': f'cuda:{device_id}'},  # Specify the device map
+                                                  trust_remote_code=True)
+        model.tokenizer = tokenizer
+        break  # If successful, break out of the loop
+    except RuntimeError as e:
+        if 'out of memory' in str(e):
+            print(f"Failed to allocate memory on CUDA device {device_id}. Trying next device...")
+            continue
+        else:
+            raise e  # Re-raise if the error is not related to out of memory
 
-query = 'Image4 <ImageHere>; How about the car in Image4'
-image.append('./examples/cars4.jpg')
-with torch.autocast(device_type='cuda', dtype=torch.float16):
-    response, _ = model.chat(tokenizer, query, image, do_sample=False, num_beams=3, history= his, use_meta=True).to('cuda')
-print(response)
-#The car in Image4 is a red sports car, which appears to be a Ferrari. Ferrari is a renowned Italian manufacturer known for producing some of the most iconic and high-performance sports cars in the world. - Advantages: Ferrari vehicles are synonymous with speed, luxury, and engineering excellence.
-#The car in the image likely offers an exhilarating driving experience with its powerful engine, advanced aerodynamics, and high-quality craftsmanship. The red color adds to the car's aesthetic appeal, making it stand out on the road. - Disadvantages: Ferrari cars are extremely expensive, making them less accessible to the average consumer.
-#They also require specialized knowledge for maintenance and may not be suitable for everyday driving due to their high-performance nature. In conclusion, the Ferrari in Image4 represents a pinnacle of automotive engineering and design, offering unmatched performance and luxury.
-#However, its high cost and specialized maintenance requirements make it less practical for everyday use compared to the other vehicles in the images.
+if model is None:
+    raise RuntimeError("Failed to load the model on any available CUDA device.")
+
+# Example queries and images for inference
+query1 = 'Image1 <ImageHere>; Image2 <ImageHere>; Image3 <ImageHere>; I want to buy a car from the three given cars, analyze their advantages and weaknesses one by one'
+query2 = 'Image4 <ImageHere>; How about the car in Image4'
+images = ['./examples/cars1.jpg',
+          './examples/cars2.jpg',
+          './examples/cars3.jpg',
+          './examples/cars4.jpg']
+
+# Inference loop
+history = None
+for query, image_path in zip([query1, query2], images):
+    # Perform inference with autocast and device placement
+    with torch.autocast(device_type='cuda', dtype=torch.float16):
+        response, history = model.chat(tokenizer, query, images, do_sample=False, num_beams=3, history=history, use_meta=True)
+    print(response)
