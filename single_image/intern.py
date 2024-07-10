@@ -1,5 +1,5 @@
 import torch
-from transformers import AutoModel, AutoTokenizer
+from transformers import AutoModel, AutoTokenizer, AutoConfig
 
 torch.set_grad_enabled(False)
 
@@ -7,6 +7,9 @@ torch.set_grad_enabled(False)
 model = AutoModel.from_pretrained('internlm/internlm-xcomposer2d5-7b', torch_dtype=torch.bfloat16, trust_remote_code=True).cuda().eval()
 tokenizer = AutoTokenizer.from_pretrained('internlm/internlm-xcomposer2d5-7b', trust_remote_code=True)
 model.tokenizer = tokenizer
+
+config = AutoConfig.from_pretrained('internlm/internlm-xcomposer2d5-7b')
+print(config)
 
 #
 # #### CUSTOM MAPWORLD EXAMPLE
@@ -45,7 +48,23 @@ curr_message = prev_user_msg
 # image.append('./examples/ADE_train_00016739.jpg')
 
 
-query = curr_message
-with torch.autocast(device_type='cuda', dtype=torch.float16):
-    response, his = model.chat(tokenizer, query, image, do_sample=False, top_p=1, num_beams=3, history=history, use_meta=True)
-print(response)
+# query = curr_message
+# with torch.autocast(device_type='cuda', dtype=torch.float16):
+#     response, his = model.chat(tokenizer, query, image, do_sample=False, top_p=1, num_beams=3, history=history, use_meta=True)
+#     # Unset top_p manually to avoid the following warning
+#     #  UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.
+# print(response)
+
+"""
+NOTES:
+ Requires additional - torchvision==0.15.2 -> Change to torch 0.16.1 after torch updae from 2.0.1 to 2.1.1
+ decord==0.6.0
+ 
+ Need to supress this warning - /project/kkoshti/testing/clem/lib/python3.10/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+And this:
+/project/kkoshti/testing/clem/lib/python3.10/site-packages/torch/_utils.py:776: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+
+
+"""
