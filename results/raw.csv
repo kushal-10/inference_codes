@@ -1,145 +1,27 @@
 ,game,model,experiment,episode,metric,value
-0,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,Aborted,1.0
-1,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,Success,
-2,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,Lose,
-3,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,moves,
-4,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,valid_moves,
-5,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,invalid_moves,
-6,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,visited,
-7,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,seen,
-8,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,effieciency,
-9,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,exploration,
-10,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,Main Score,
-11,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,Aborted,1.0
-12,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,Success,
-13,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,Lose,
-14,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,moves,
-15,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,valid_moves,
-16,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,invalid_moves,
-17,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,visited,
-18,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,seen,
-19,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,effieciency,
-20,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,exploration,
-21,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,Main Score,
-22,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_4,Aborted,1.0
-23,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_4,Success,
-24,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_4,Lose,
-25,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_4,moves,
-26,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_4,valid_moves,
-27,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_4,invalid_moves,
-28,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_4,visited,
-29,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_4,seen,
-30,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_4,effieciency,
-31,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_4,exploration,
-32,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_4,Main Score,
-33,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_3,Aborted,1.0
-34,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_3,Success,
-35,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_3,Lose,
-36,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_3,moves,
-37,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_3,valid_moves,
-38,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_3,invalid_moves,
-39,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_3,visited,
-40,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_3,seen,
-41,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_3,effieciency,
-42,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_3,exploration,
-43,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_3,Main Score,
-44,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_8,Aborted,1.0
-45,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_8,Success,
-46,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_8,Lose,
-47,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_8,moves,
-48,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_8,valid_moves,
-49,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_8,invalid_moves,
-50,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_8,visited,
-51,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_8,seen,
-52,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_8,effieciency,
-53,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_8,exploration,
-54,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_8,Main Score,
-55,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_2,Aborted,1.0
-56,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_2,Success,
-57,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_2,Lose,
-58,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_2,moves,
-59,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_2,valid_moves,
-60,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_2,invalid_moves,
-61,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_2,visited,
-62,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_2,seen,
-63,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_2,effieciency,
-64,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_2,exploration,
-65,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_2,Main Score,
-66,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_5,Aborted,1.0
-67,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_5,Success,
-68,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_5,Lose,
-69,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_5,moves,
-70,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_5,valid_moves,
-71,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_5,invalid_moves,
-72,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_5,visited,
-73,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_5,seen,
-74,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_5,effieciency,
-75,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_5,exploration,
-76,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_5,Main Score,
-77,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_9,Aborted,1.0
-78,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_9,Success,
-79,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_9,Lose,
-80,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_9,moves,
-81,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_9,valid_moves,
-82,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_9,invalid_moves,
-83,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_9,visited,
-84,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_9,seen,
-85,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_9,effieciency,
-86,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_9,exploration,
-87,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_9,Main Score,
-88,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_7,Aborted,1.0
-89,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_7,Success,
-90,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_7,Lose,
-91,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_7,moves,
-92,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_7,valid_moves,
-93,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_7,invalid_moves,
-94,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_7,visited,
-95,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_7,seen,
-96,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_7,effieciency,
-97,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_7,exploration,
-98,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_7,Main Score,
-99,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_1,Aborted,1.0
-100,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_1,Success,
-101,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_1,Lose,
-102,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_1,moves,
-103,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_1,valid_moves,
-104,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_1,invalid_moves,
-105,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_1,visited,
-106,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_1,seen,
-107,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_1,effieciency,
-108,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_1,exploration,
-109,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_1,Main Score,
-110,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_6,Aborted,1.0
-111,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_6,Success,
-112,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_6,Lose,
-113,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_6,moves,
-114,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_6,valid_moves,
-115,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_6,invalid_moves,
-116,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_6,visited,
-117,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_6,seen,
-118,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_6,effieciency,
-119,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_6,exploration,
-120,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_6,Main Score,
-121,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_0,Aborted,1.0
-122,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_0,Success,
-123,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_0,Lose,
-124,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_0,moves,
-125,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_0,valid_moves,
-126,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_0,invalid_moves,
-127,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_0,visited,
-128,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_0,seen,
-129,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_0,effieciency,
-130,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_0,exploration,
-131,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_0,Main Score,
-132,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,Played,0.0
-133,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,Played,0.0
-134,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_4,Played,0.0
-135,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_3,Played,0.0
-136,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_8,Played,0.0
-137,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_2,Played,0.0
-138,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_5,Played,0.0
-139,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_9,Played,0.0
-140,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_7,Played,0.0
-141,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_1,Played,0.0
-142,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_6,Played,0.0
-143,mm_mapworld,llava-1.5-13b-hf-t0.0--llava-1.5-13b-hf-t0.0,0_small,episode_0,Played,0.0
+0,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Generated Expression Length,33.0
+1,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Generated Expression Number of Tokens,6.0
+2,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Aborted at Player 1,0.0
+3,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Aborted at Player 2,0.0
+4,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Request Count,2.0
+5,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Parsed Request Count,2.0
+6,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Violated Request Count,0.0
+7,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Success,1.0
+8,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Lose,0.0
+9,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Aborted,0.0
+10,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Main Score,100.0
+11,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Request Success Ratio,1.0
+12,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Aborted at Player 1,1.0
+13,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Aborted at Player 2,0.0
+14,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Generated Expression Length,
+15,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Generated Expression Number of Tokens,
+16,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Request Count,1.0
+17,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Parsed Request Count,0.0
+18,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Violated Request Count,1.0
+19,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Success,0.0
+20,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Lose,1.0
+21,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Aborted,1.0
+22,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Main Score,
+23,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Request Success Ratio,0.0
+24,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Played,1.0
+25,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Played,0.0
