@@ -1,0 +1,25 @@
+,game,model,experiment,episode,metric,value
+0,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,Aborted,1.0
+1,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,Success,
+2,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,Lose,
+3,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,moves,
+4,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,valid_moves,
+5,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,invalid_moves,
+6,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,visited,
+7,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,seen,
+8,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,effieciency,
+9,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,exploration,
+10,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,Main Score,
+11,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,Aborted,1.0
+12,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,Success,
+13,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,Lose,
+14,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,moves,
+15,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,valid_moves,
+16,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,invalid_moves,
+17,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,visited,
+18,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,seen,
+19,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,effieciency,
+20,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,exploration,
+21,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,Main Score,
+22,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,Played,0.0
+23,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,Played,0.0
