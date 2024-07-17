@@ -1,27 +1,589 @@
 ,game,model,experiment,episode,metric,value
-0,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Generated Expression Length,33.0
-1,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Generated Expression Number of Tokens,6.0
-2,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Aborted at Player 1,0.0
-3,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Aborted at Player 2,0.0
-4,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Request Count,2.0
-5,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Parsed Request Count,2.0
-6,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Violated Request Count,0.0
-7,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Success,1.0
-8,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Lose,0.0
-9,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Aborted,0.0
-10,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Main Score,100.0
-11,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Request Success Ratio,1.0
-12,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Aborted at Player 1,1.0
-13,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Aborted at Player 2,0.0
-14,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Generated Expression Length,
-15,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Generated Expression Number of Tokens,
-16,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Request Count,1.0
-17,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Parsed Request Count,0.0
-18,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Violated Request Count,1.0
-19,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Success,0.0
-20,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Lose,1.0
-21,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Aborted,1.0
-22,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Main Score,
-23,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Request Success Ratio,0.0
-24,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_1,Played,1.0
-25,multimodal_referencegame,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,6_ADE_images,episode_0,Played,0.0
+0,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_4,Aborted,1.0
+1,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_4,Success,
+2,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_4,Lose,
+3,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_4,moves,
+4,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_4,valid_moves,
+5,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_4,invalid_moves,
+6,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_4,visited,
+7,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_4,seen,
+8,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_4,effieciency,
+9,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_4,exploration,
+10,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_4,Main Score,
+11,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_3,Aborted,1.0
+12,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_3,Success,
+13,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_3,Lose,
+14,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_3,moves,
+15,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_3,valid_moves,
+16,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_3,invalid_moves,
+17,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_3,visited,
+18,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_3,seen,
+19,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_3,effieciency,
+20,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_3,exploration,
+21,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_3,Main Score,
+22,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_8,Aborted,1.0
+23,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_8,Success,
+24,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_8,Lose,
+25,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_8,moves,
+26,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_8,valid_moves,
+27,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_8,invalid_moves,
+28,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_8,visited,
+29,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_8,seen,
+30,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_8,effieciency,
+31,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_8,exploration,
+32,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_8,Main Score,
+33,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_2,Aborted,1.0
+34,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_2,Success,
+35,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_2,Lose,
+36,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_2,moves,
+37,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_2,valid_moves,
+38,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_2,invalid_moves,
+39,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_2,visited,
+40,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_2,seen,
+41,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_2,effieciency,
+42,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_2,exploration,
+43,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_2,Main Score,
+44,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_5,Aborted,1.0
+45,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_5,Success,
+46,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_5,Lose,
+47,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_5,moves,
+48,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_5,valid_moves,
+49,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_5,invalid_moves,
+50,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_5,visited,
+51,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_5,seen,
+52,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_5,effieciency,
+53,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_5,exploration,
+54,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_5,Main Score,
+55,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_9,Aborted,1.0
+56,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_9,Success,
+57,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_9,Lose,
+58,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_9,moves,
+59,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_9,valid_moves,
+60,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_9,invalid_moves,
+61,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_9,visited,
+62,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_9,seen,
+63,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_9,effieciency,
+64,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_9,exploration,
+65,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_9,Main Score,
+66,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_7,Aborted,1.0
+67,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_7,Success,
+68,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_7,Lose,
+69,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_7,moves,
+70,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_7,valid_moves,
+71,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_7,invalid_moves,
+72,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_7,visited,
+73,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_7,seen,
+74,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_7,effieciency,
+75,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_7,exploration,
+76,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_7,Main Score,
+77,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,Aborted,1.0
+78,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,Success,
+79,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,Lose,
+80,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,moves,
+81,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,valid_moves,
+82,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,invalid_moves,
+83,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,visited,
+84,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,seen,
+85,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,effieciency,
+86,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,exploration,
+87,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,Main Score,
+88,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_6,Aborted,1.0
+89,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_6,Success,
+90,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_6,Lose,
+91,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_6,moves,
+92,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_6,valid_moves,
+93,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_6,invalid_moves,
+94,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_6,visited,
+95,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_6,seen,
+96,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_6,effieciency,
+97,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_6,exploration,
+98,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_6,Main Score,
+99,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,Aborted,1.0
+100,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,Success,
+101,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,Lose,
+102,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,moves,
+103,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,valid_moves,
+104,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,invalid_moves,
+105,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,visited,
+106,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,seen,
+107,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,effieciency,
+108,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,exploration,
+109,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,Main Score,
+110,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_4,Aborted,1.0
+111,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_4,Success,
+112,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_4,Lose,
+113,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_4,moves,
+114,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_4,valid_moves,
+115,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_4,invalid_moves,
+116,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_4,visited,
+117,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_4,seen,
+118,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_4,effieciency,
+119,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_4,exploration,
+120,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_4,Main Score,
+121,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_3,Aborted,1.0
+122,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_3,Success,
+123,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_3,Lose,
+124,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_3,moves,
+125,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_3,valid_moves,
+126,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_3,invalid_moves,
+127,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_3,visited,
+128,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_3,seen,
+129,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_3,effieciency,
+130,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_3,exploration,
+131,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_3,Main Score,
+132,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_8,Aborted,1.0
+133,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_8,Success,
+134,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_8,Lose,
+135,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_8,moves,
+136,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_8,valid_moves,
+137,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_8,invalid_moves,
+138,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_8,visited,
+139,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_8,seen,
+140,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_8,effieciency,
+141,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_8,exploration,
+142,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_8,Main Score,
+143,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_2,Aborted,1.0
+144,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_2,Success,
+145,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_2,Lose,
+146,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_2,moves,
+147,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_2,valid_moves,
+148,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_2,invalid_moves,
+149,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_2,visited,
+150,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_2,seen,
+151,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_2,effieciency,
+152,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_2,exploration,
+153,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_2,Main Score,
+154,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_5,Aborted,1.0
+155,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_5,Success,
+156,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_5,Lose,
+157,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_5,moves,
+158,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_5,valid_moves,
+159,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_5,invalid_moves,
+160,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_5,visited,
+161,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_5,seen,
+162,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_5,effieciency,
+163,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_5,exploration,
+164,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_5,Main Score,
+165,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_9,Aborted,1.0
+166,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_9,Success,
+167,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_9,Lose,
+168,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_9,moves,
+169,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_9,valid_moves,
+170,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_9,invalid_moves,
+171,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_9,visited,
+172,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_9,seen,
+173,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_9,effieciency,
+174,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_9,exploration,
+175,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_9,Main Score,
+176,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_7,Aborted,1.0
+177,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_7,Success,
+178,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_7,Lose,
+179,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_7,moves,
+180,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_7,valid_moves,
+181,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_7,invalid_moves,
+182,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_7,visited,
+183,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_7,seen,
+184,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_7,effieciency,
+185,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_7,exploration,
+186,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_7,Main Score,
+187,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_1,Aborted,1.0
+188,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_1,Success,
+189,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_1,Lose,
+190,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_1,moves,
+191,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_1,valid_moves,
+192,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_1,invalid_moves,
+193,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_1,visited,
+194,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_1,seen,
+195,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_1,effieciency,
+196,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_1,exploration,
+197,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_1,Main Score,
+198,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_6,Aborted,1.0
+199,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_6,Success,
+200,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_6,Lose,
+201,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_6,moves,
+202,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_6,valid_moves,
+203,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_6,invalid_moves,
+204,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_6,visited,
+205,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_6,seen,
+206,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_6,effieciency,
+207,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_6,exploration,
+208,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_6,Main Score,
+209,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_0,Aborted,1.0
+210,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_0,Success,
+211,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_0,Lose,
+212,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_0,moves,
+213,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_0,valid_moves,
+214,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_0,invalid_moves,
+215,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_0,visited,
+216,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_0,seen,
+217,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_0,effieciency,
+218,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_0,exploration,
+219,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_0,Main Score,
+220,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_4,Aborted,1.0
+221,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_4,Success,
+222,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_4,Lose,
+223,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_4,moves,
+224,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_4,valid_moves,
+225,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_4,invalid_moves,
+226,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_4,visited,
+227,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_4,seen,
+228,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_4,effieciency,
+229,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_4,exploration,
+230,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_4,Main Score,
+231,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_3,Aborted,1.0
+232,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_3,Success,
+233,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_3,Lose,
+234,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_3,moves,
+235,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_3,valid_moves,
+236,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_3,invalid_moves,
+237,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_3,visited,
+238,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_3,seen,
+239,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_3,effieciency,
+240,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_3,exploration,
+241,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_3,Main Score,
+242,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_8,Aborted,1.0
+243,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_8,Success,
+244,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_8,Lose,
+245,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_8,moves,
+246,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_8,valid_moves,
+247,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_8,invalid_moves,
+248,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_8,visited,
+249,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_8,seen,
+250,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_8,effieciency,
+251,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_8,exploration,
+252,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_8,Main Score,
+253,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_2,Aborted,1.0
+254,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_2,Success,
+255,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_2,Lose,
+256,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_2,moves,
+257,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_2,valid_moves,
+258,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_2,invalid_moves,
+259,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_2,visited,
+260,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_2,seen,
+261,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_2,effieciency,
+262,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_2,exploration,
+263,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_2,Main Score,
+264,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_5,Aborted,1.0
+265,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_5,Success,
+266,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_5,Lose,
+267,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_5,moves,
+268,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_5,valid_moves,
+269,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_5,invalid_moves,
+270,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_5,visited,
+271,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_5,seen,
+272,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_5,effieciency,
+273,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_5,exploration,
+274,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_5,Main Score,
+275,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_9,Aborted,1.0
+276,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_9,Success,
+277,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_9,Lose,
+278,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_9,moves,
+279,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_9,valid_moves,
+280,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_9,invalid_moves,
+281,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_9,visited,
+282,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_9,seen,
+283,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_9,effieciency,
+284,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_9,exploration,
+285,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_9,Main Score,
+286,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_7,Aborted,1.0
+287,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_7,Success,
+288,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_7,Lose,
+289,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_7,moves,
+290,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_7,valid_moves,
+291,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_7,invalid_moves,
+292,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_7,visited,
+293,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_7,seen,
+294,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_7,effieciency,
+295,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_7,exploration,
+296,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_7,Main Score,
+297,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_1,Aborted,1.0
+298,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_1,Success,
+299,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_1,Lose,
+300,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_1,moves,
+301,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_1,valid_moves,
+302,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_1,invalid_moves,
+303,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_1,visited,
+304,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_1,seen,
+305,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_1,effieciency,
+306,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_1,exploration,
+307,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_1,Main Score,
+308,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_6,Aborted,1.0
+309,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_6,Success,
+310,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_6,Lose,
+311,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_6,moves,
+312,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_6,valid_moves,
+313,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_6,invalid_moves,
+314,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_6,visited,
+315,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_6,seen,
+316,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_6,effieciency,
+317,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_6,exploration,
+318,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_6,Main Score,
+319,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_4,Aborted,1.0
+320,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_4,Success,
+321,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_4,Lose,
+322,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_4,moves,
+323,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_4,valid_moves,
+324,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_4,invalid_moves,
+325,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_4,visited,
+326,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_4,seen,
+327,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_4,effieciency,
+328,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_4,exploration,
+329,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_4,Main Score,
+330,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_3,Aborted,1.0
+331,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_3,Success,
+332,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_3,Lose,
+333,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_3,moves,
+334,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_3,valid_moves,
+335,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_3,invalid_moves,
+336,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_3,visited,
+337,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_3,seen,
+338,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_3,effieciency,
+339,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_3,exploration,
+340,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_3,Main Score,
+341,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_8,Aborted,1.0
+342,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_8,Success,
+343,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_8,Lose,
+344,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_8,moves,
+345,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_8,valid_moves,
+346,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_8,invalid_moves,
+347,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_8,visited,
+348,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_8,seen,
+349,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_8,effieciency,
+350,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_8,exploration,
+351,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_8,Main Score,
+352,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_2,Aborted,1.0
+353,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_2,Success,
+354,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_2,Lose,
+355,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_2,moves,
+356,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_2,valid_moves,
+357,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_2,invalid_moves,
+358,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_2,visited,
+359,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_2,seen,
+360,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_2,effieciency,
+361,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_2,exploration,
+362,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_2,Main Score,
+363,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_5,Aborted,1.0
+364,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_5,Success,
+365,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_5,Lose,
+366,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_5,moves,
+367,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_5,valid_moves,
+368,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_5,invalid_moves,
+369,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_5,visited,
+370,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_5,seen,
+371,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_5,effieciency,
+372,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_5,exploration,
+373,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_5,Main Score,
+374,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_9,Aborted,1.0
+375,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_9,Success,
+376,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_9,Lose,
+377,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_9,moves,
+378,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_9,valid_moves,
+379,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_9,invalid_moves,
+380,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_9,visited,
+381,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_9,seen,
+382,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_9,effieciency,
+383,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_9,exploration,
+384,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_9,Main Score,
+385,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_7,Aborted,1.0
+386,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_7,Success,
+387,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_7,Lose,
+388,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_7,moves,
+389,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_7,valid_moves,
+390,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_7,invalid_moves,
+391,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_7,visited,
+392,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_7,seen,
+393,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_7,effieciency,
+394,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_7,exploration,
+395,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_7,Main Score,
+396,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_1,Aborted,1.0
+397,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_1,Success,
+398,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_1,Lose,
+399,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_1,moves,
+400,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_1,valid_moves,
+401,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_1,invalid_moves,
+402,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_1,visited,
+403,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_1,seen,
+404,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_1,effieciency,
+405,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_1,exploration,
+406,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_1,Main Score,
+407,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_6,Aborted,1.0
+408,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_6,Success,
+409,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_6,Lose,
+410,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_6,moves,
+411,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_6,valid_moves,
+412,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_6,invalid_moves,
+413,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_6,visited,
+414,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_6,seen,
+415,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_6,effieciency,
+416,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_6,exploration,
+417,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_6,Main Score,
+418,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_0,Aborted,1.0
+419,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_0,Success,
+420,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_0,Lose,
+421,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_0,moves,
+422,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_0,valid_moves,
+423,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_0,invalid_moves,
+424,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_0,visited,
+425,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_0,seen,
+426,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_0,effieciency,
+427,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_0,exploration,
+428,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_0,Main Score,
+429,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_4,Aborted,1.0
+430,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_4,Success,
+431,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_4,Lose,
+432,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_4,moves,
+433,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_4,valid_moves,
+434,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_4,invalid_moves,
+435,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_4,visited,
+436,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_4,seen,
+437,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_4,effieciency,
+438,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_4,exploration,
+439,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_4,Main Score,
+440,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_3,Aborted,1.0
+441,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_3,Success,
+442,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_3,Lose,
+443,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_3,moves,
+444,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_3,valid_moves,
+445,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_3,invalid_moves,
+446,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_3,visited,
+447,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_3,seen,
+448,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_3,effieciency,
+449,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_3,exploration,
+450,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_3,Main Score,
+451,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_8,Aborted,1.0
+452,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_8,Success,
+453,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_8,Lose,
+454,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_8,moves,
+455,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_8,valid_moves,
+456,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_8,invalid_moves,
+457,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_8,visited,
+458,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_8,seen,
+459,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_8,effieciency,
+460,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_8,exploration,
+461,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_8,Main Score,
+462,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_2,Aborted,1.0
+463,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_2,Success,
+464,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_2,Lose,
+465,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_2,moves,
+466,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_2,valid_moves,
+467,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_2,invalid_moves,
+468,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_2,visited,
+469,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_2,seen,
+470,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_2,effieciency,
+471,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_2,exploration,
+472,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_2,Main Score,
+473,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_5,Aborted,1.0
+474,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_5,Success,
+475,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_5,Lose,
+476,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_5,moves,
+477,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_5,valid_moves,
+478,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_5,invalid_moves,
+479,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_5,visited,
+480,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_5,seen,
+481,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_5,effieciency,
+482,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_5,exploration,
+483,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_5,Main Score,
+484,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_9,Aborted,1.0
+485,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_9,Success,
+486,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_9,Lose,
+487,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_9,moves,
+488,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_9,valid_moves,
+489,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_9,invalid_moves,
+490,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_9,visited,
+491,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_9,seen,
+492,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_9,effieciency,
+493,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_9,exploration,
+494,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_9,Main Score,
+495,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_7,Aborted,1.0
+496,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_7,Success,
+497,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_7,Lose,
+498,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_7,moves,
+499,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_7,valid_moves,
+500,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_7,invalid_moves,
+501,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_7,visited,
+502,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_7,seen,
+503,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_7,effieciency,
+504,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_7,exploration,
+505,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_7,Main Score,
+506,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_1,Aborted,1.0
+507,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_1,Success,
+508,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_1,Lose,
+509,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_1,moves,
+510,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_1,valid_moves,
+511,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_1,invalid_moves,
+512,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_1,visited,
+513,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_1,seen,
+514,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_1,effieciency,
+515,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_1,exploration,
+516,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_1,Main Score,
+517,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_6,Aborted,1.0
+518,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_6,Success,
+519,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_6,Lose,
+520,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_6,moves,
+521,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_6,valid_moves,
+522,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_6,invalid_moves,
+523,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_6,visited,
+524,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_6,seen,
+525,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_6,effieciency,
+526,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_6,exploration,
+527,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_6,Main Score,
+528,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_0,Aborted,1.0
+529,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_0,Success,
+530,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_0,Lose,
+531,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_0,moves,
+532,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_0,valid_moves,
+533,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_0,invalid_moves,
+534,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_0,visited,
+535,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_0,seen,
+536,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_0,effieciency,
+537,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_0,exploration,
+538,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_0,Main Score,
+539,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_4,Played,0.0
+540,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_3,Played,0.0
+541,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_8,Played,0.0
+542,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_2,Played,0.0
+543,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_5,Played,0.0
+544,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_9,Played,0.0
+545,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_7,Played,0.0
+546,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_1,Played,0.0
+547,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_6,Played,0.0
+548,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,0_small,episode_0,Played,0.0
+549,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_4,Played,0.0
+550,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_3,Played,0.0
+551,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_8,Played,0.0
+552,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_2,Played,0.0
+553,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_5,Played,0.0
+554,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_9,Played,0.0
+555,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_7,Played,0.0
+556,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_1,Played,0.0
+557,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_6,Played,0.0
+558,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,1_medium,episode_0,Played,0.0
+559,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_4,Played,0.0
+560,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_3,Played,0.0
+561,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_8,Played,0.0
+562,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_2,Played,0.0
+563,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_5,Played,0.0
+564,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_9,Played,0.0
+565,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_7,Played,0.0
+566,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_1,Played,0.0
+567,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,4_large_cycle,episode_6,Played,0.0
+568,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_4,Played,0.0
+569,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_3,Played,0.0
+570,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_8,Played,0.0
+571,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_2,Played,0.0
+572,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_5,Played,0.0
+573,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_9,Played,0.0
+574,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_7,Played,0.0
+575,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_1,Played,0.0
+576,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_6,Played,0.0
+577,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,3_medium_cycle,episode_0,Played,0.0
+578,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_4,Played,0.0
+579,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_3,Played,0.0
+580,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_8,Played,0.0
+581,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_2,Played,0.0
+582,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_5,Played,0.0
+583,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_9,Played,0.0
+584,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_7,Played,0.0
+585,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_1,Played,0.0
+586,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_6,Played,0.0
+587,mm_mapworld,internlm-xcomposer2d5-7b-t0.0--internlm-xcomposer2d5-7b-t0.0,2_large,episode_0,Played,0.0
