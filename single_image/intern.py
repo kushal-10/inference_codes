@@ -5,8 +5,28 @@ import requests
 
 torch.set_grad_enabled(False)
 
-# init model and tokenizer
-model = AutoModel.from_pretrained('internlm/internlm-xcomposer2d5-7b', torch_dtype=torch.bfloat16, trust_remote_code=True).cuda().eval()
+
+def custom_padding(img, padding):
+    num_channels = len(img.getbands())
+    if num_channels == 4:  # RGBA
+        fill_color = (255, 255, 255, 255)
+    elif num_channels == 3:  # RGB
+        fill_color = (255, 255, 255)
+    else:
+        raise ValueError(f"Unsupported number of channels: {num_channels}")
+
+    padded_img = F.pad(img, padding, fill=fill_color)
+    return padded_img
+
+
+def pad_image(image_path, padding):
+    img = Image.open(image_path)
+    padded_img = custom_padding(img, padding)
+    return padded_img
+
+
+model = AutoModel.from_pretrained('internlm/internlm-xcomposer2d5-7b', torch_dtype=torch.bfloat16,
+                                  trust_remote_code=True).cuda().eval()
 tokenizer = AutoTokenizer.from_pretrained('internlm/internlm-xcomposer2d5-7b', trust_remote_code=True)
 model.tokenizer = tokenizer
 
@@ -14,20 +34,15 @@ query = 'Image1 <ImageHere>; What is shown in this image?'
 image_path = './examples/8.jpg'
 image = [image_path]
 
-# Open the image to check the number of channels
-img = Image.open(image_path)
-num_channels = len(img.getbands())
+# Define the padding size
+padding = (0, 0, 560, 336)
 
-# Choose the fill color based on the number of channels
-if num_channels == 4:  # RGBA
-    fill_color = [255, 255, 255, 255]
-elif num_channels == 3:  # RGB
-    fill_color = [255, 255, 255]
-else:
-    raise ValueError(f"Unsupported number of channels: {num_channels}")
+# Pad the image
+padded_img = pad_image(image_path, padding)
+padded_img.save('padded_image.jpg')
 
 with torch.autocast(device_type='cuda', dtype=torch.float16):
-    response, his = model.chat(tokenizer, query, image, do_sample=False, num_beams=3, use_meta=True, fill=fill_color)
+    response, his = model.chat(tokenizer, query, ['padded_image.jpg'], do_sample=False, num_beams=3, use_meta=True)
 print(response)
 
 
