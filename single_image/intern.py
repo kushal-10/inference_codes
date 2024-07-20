@@ -52,7 +52,7 @@ new_image = Image.open('padded_image.jpg')
 
 # Convert PIL Image to bytes
 buffer = io.BytesIO()
-image.save(buffer, format=new_image.format)  # Save the image in its original format
+new_image.save(buffer, format=new_image.format)  # Save the image in its original format
 image_bytes = buffer.getvalue()  # Get the byte data
 
 # Encode bytes to base64 string
