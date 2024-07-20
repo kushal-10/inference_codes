@@ -2,6 +2,7 @@ import torch
 from transformers import AutoModel, AutoTokenizer, AutoConfig, AutoModelForCausalLM
 from PIL import Image
 import requests
+import torchvision.transforms.functional as F
 
 torch.set_grad_enabled(False)
 
