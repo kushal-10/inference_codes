@@ -23,6 +23,8 @@ def custom_padding(img, padding):
 def pad_image(image_path, padding):
     img = Image.open(image_path)
     padded_img = custom_padding(img, padding)
+    if padded_img.mode == 'RGBA':
+        padded_img = padded_img.convert('RGB')  # Convert RGBA to RGB
     return padded_img
 
 
@@ -40,7 +42,7 @@ padding = (0, 0, 560, 336)
 
 # Pad the image
 padded_img = pad_image(image_path, padding)
-padded_img.save('padded_image.jpg')
+padded_img.save('padded_image.jpg')  # Save the image in RGB mode
 
 with torch.autocast(device_type='cuda', dtype=torch.float16):
     response, his = model.chat(tokenizer, query, ['padded_image.jpg'], do_sample=False, num_beams=3, use_meta=True)
