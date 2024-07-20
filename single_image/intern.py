@@ -11,9 +11,23 @@ tokenizer = AutoTokenizer.from_pretrained('internlm/internlm-xcomposer2d5-7b', t
 model.tokenizer = tokenizer
 
 query = 'Image1 <ImageHere>; What is shown in this image?'
-image = ['./examples/8.jpg']
+image_path = './examples/8.jpg'
+image = [image_path]
+
+# Open the image to check the number of channels
+img = Image.open(image_path)
+num_channels = len(img.getbands())
+
+# Choose the fill color based on the number of channels
+if num_channels == 4:  # RGBA
+    fill_color = [255, 255, 255, 255]
+elif num_channels == 3:  # RGB
+    fill_color = [255, 255, 255]
+else:
+    raise ValueError(f"Unsupported number of channels: {num_channels}")
+
 with torch.autocast(device_type='cuda', dtype=torch.float16):
-    response, his = model.chat(tokenizer, query, image, do_sample=False, num_beams=3, use_meta=True)
+    response, his = model.chat(tokenizer, query, image, do_sample=False, num_beams=3, use_meta=True, fill=fill_color)
 print(response)
 
 
