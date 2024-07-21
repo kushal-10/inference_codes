@@ -38,7 +38,8 @@ image_path = './examples/8.jpg'
 image = [image_path]
 
 # Define the padding size
-padding = (0, 0, 560, 336)
+# padding = (0, 0, 560, 336)
+padding = (0,0,0,0)
 
 # Pad the image
 padded_img = pad_image(image_path, padding)
