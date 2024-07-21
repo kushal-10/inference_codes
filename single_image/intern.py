@@ -3,9 +3,6 @@ from transformers import AutoModel, AutoTokenizer, AutoConfig, AutoModelForCausa
 from PIL import Image
 import requests
 import torchvision.transforms.functional as F
-import io
-import base64
-
 
 torch.set_grad_enabled(False)
 
@@ -47,31 +44,15 @@ padding = (0, 0, 560, 336)
 padded_img = pad_image(image_path, padding)
 padded_img.save('padded_image.jpg')  # Save the image in RGB mode
 
-
-new_image = Image.open('padded_image.jpg')
-
-# Convert PIL Image to bytes
-buffer = io.BytesIO()
-new_image.save(buffer, format=new_image.format)  # Save the image in its original format
-image_bytes = buffer.getvalue()  # Get the byte data
-
-# Encode bytes to base64 string
-encoded_image = base64.b64encode(image_bytes).decode('utf-8')
-
-# Now `encoded_image` is a base64 string representation of the image
-# print(encoded_image)
-
 with torch.autocast(device_type='cuda', dtype=torch.float16):
-    response, his = model.chat(tokenizer, query, encoded_image, do_sample=False, num_beams=3, use_meta=True)
+    response, his = model.chat(tokenizer, query, ['padded_image.jpg'], do_sample=False, num_beams=3, use_meta=True)
 print(response)
-
-
 
 """
 NOTES:
  Requires additional - torchvision==0.15.2 -> Change to torch 0.16.1 after torch updae from 2.0.1 to 2.1.1
  decord==0.6.0
- 
+
  Need to supress this warning - /project/kkoshti/testing/clem/lib/python3.10/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
   warnings.warn(
 And this:
