@@ -33,20 +33,19 @@ model = AutoModel.from_pretrained('internlm/internlm-xcomposer2d5-7b', torch_dty
 tokenizer = AutoTokenizer.from_pretrained('internlm/internlm-xcomposer2d5-7b', trust_remote_code=True)
 model.tokenizer = tokenizer
 
-query = 'Image1 <ImageHere>; What is shown in this image?'
-image_path = './examples/8.jpg'
-image = [image_path]
+query = 'Image1 <ImageHere>; Image2 <ImageHere>; What are the differences in these images?'
 
-# Define the padding size
-# padding = (0, 0, 560, 336)
+image_paths = ['./examples/10.jpg', './examples/cars4.jpg']
 padding = (0,0,0,0)
-
 # Pad the image
-padded_img = pad_image(image_path, padding)
-padded_img.save('padded_image.jpg')  # Save the image in RGB mode
+padded_paths = ["pad1.jpg", "pad2.jpg"]
+
+for i, im in enumerate(image_paths):
+    padded_img = pad_image(im, padding)
+    padded_img.save(padded_paths[i])  # Save the image in RGB mode
 
 with torch.autocast(device_type='cuda', dtype=torch.float16):
-    response, his = model.chat(tokenizer, query, ['padded_image.jpg'], do_sample=False, num_beams=3, use_meta=True)
+    response, his = model.chat(tokenizer, query, padded_paths, do_sample=False, num_beams=3, use_meta=True)
 print(response)
 
 """
