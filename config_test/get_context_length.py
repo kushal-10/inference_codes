@@ -15,8 +15,13 @@ def print_context_length(model_id):
 
     print(f"Context limit for model - {model_id} is {context}")\
     
-model_ids = ["Phi-3-vision-128k-instruct", "Phi-3.5-vision-instruct", "Idefics3-8B-Llama3","internlm-xcomposer2d5-7b", "InternVL2-8B", "InternVL2-26B",
-             "InternVL2-40B", "InternVL2-Llama3-76B"]
-
+model_ids = ["microsoft/Phi-3-vision-128k-instruct",
+             "microsoft/Phi-3.5-vision-instruct",
+             "HuggingFaceM4/Idefics3-8B-Llama3",
+             "internlm/internlm-xcomposer2d5-7b",
+             "OpenGVLab/InternVL2-8B",
+             "OpenGVLab/InternVL2-26B",
+             "OpenGVLab/InternVL2-40B",
+             "OpenGVLab/InternVL2-Llama3-76B"]
 for model_id in model_ids:
     print_context_length(model_id)
